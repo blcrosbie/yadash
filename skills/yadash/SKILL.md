@@ -28,11 +28,11 @@ Never report a dashboard as done without a clean `validate --strict`.
 ### Commands
 
 ```bash
-npx yadash init sales            # starter YAML + 60 days of sample CSV
-npx yadash validate sales.yaml --json --strict
-npx yadash build sales.yaml -o dist/sales
-npx yadash dev sales.yaml        # localhost:4321, rebuilds on refresh
-npx yadash schema                # the JSON Schema, for editors and tooling
+npx @blcrosbie/yadash init sales            # starter YAML + 60 days of sample CSV
+npx @blcrosbie/yadash validate sales.yaml --json --strict
+npx @blcrosbie/yadash build sales.yaml -o dist/sales
+npx @blcrosbie/yadash dev sales.yaml        # localhost:4321, rebuilds on refresh
+npx @blcrosbie/yadash schema                # the JSON Schema, for editors and tooling
 ```
 
 Inside a clone of the repo, `node bin/yadash.mjs <cmd>` works with zero install.

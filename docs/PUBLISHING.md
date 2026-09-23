@@ -8,93 +8,61 @@ agent they already use. Everything below is ordered by that.
 
 **Status (2026-09-23):** repo history is pushed to `blcrosbie/yadash` on GitHub
 (origin remote already points there). `npm whoami` confirms you're logged in
-as `blcrosbie`. The npm registry has never had a `yadash` package, so the name
-is free.
+as `blcrosbie`.
 
-**`npm publish` from the CLI is currently blocked by npm's own 2026 2FA
-lockdown**, not by anything in this repo: npm is phasing out direct publishing
-from both bypass-2FA granular tokens and the old inline-OTP prompt (full
-removal of bypass-2FA direct publish is targeted for January 2027, and in
-practice the inline OTP prompt on `npm publish` did not appear at all for this
-account — it 403'd immediately with `Two-factor authentication or granular
-access token with bypass 2fa enabled is required to publish packages`). The
-npm-recommended replacement is **Trusted Publishing (OIDC)**: GitHub Actions
-publishes directly, authenticated by a short-lived token npm issues per run —
-no npm token stored anywhere, ever. `.github/workflows/publish.yml` in this
-repo is already wired up for it (triggers on `v*` tags or manual dispatch).
+**The package is published as `@blcrosbie/yadash`, not bare `yadash`.** The
+unscoped name was rejected by npm's anti-typosquat guard (`Package name too
+similar to existing packages radash,lodash`); npm's own suggested fix — scope
+it to your account — is what every install line below now uses. The CLI
+command itself is unaffected: `package.json`'s `bin` field maps to the command
+name `yadash` regardless of the npm package name, so once installed, every
+command is still `yadash validate`, `yadash build`, etc. Only the
+install/`npx` invocation carries the scope.
 
-The catch: npm will not let you configure a Trusted Publisher for a package
-that doesn't exist on the registry yet, so the very first publish has to be
-done by hand with a token. Bootstrap it once, then never touch a token again:
-
-1. **Create a short-lived bootstrap token.** npmjs.com → Profile → Access
-   Tokens → Generate New Token → Granular Access Token → Read and write →
-   scope it to the `yadash` package (or "All packages" if `yadash` isn't
-   selectable yet, since it doesn't exist) → set the shortest expiry offered →
-   check **Bypass 2FA for token-based write actions**. Copy the token.
-2. **Publish once, locally, with that token** (PowerShell — run each line
-   separately, `&&` isn't valid PowerShell syntax):
-   ```powershell
-   cd C:\Users\bcros\dev\blcrosbie\yadash
-   npm test
-   npm run validate:examples
-   "//registry.npmjs.org/:_authToken=PASTE_TOKEN_HERE" | Out-File -Encoding ascii -Append .npmrc
-   npm publish --access public
-   Remove-Item .npmrc
-   ```
-   `.npmrc` is gitignored, but delete it anyway right after — don't leave the
-   token sitting on disk.
-3. **Revoke the bootstrap token immediately** on npmjs.com (Access Tokens →
-   delete). It only ever needed to exist for step 2.
-4. **Configure Trusted Publishing** on npmjs.com, now that `yadash` exists:
-   package page → Settings → Trusted Publisher → GitHub Actions →
-   organization/user `blcrosbie`, repository `yadash`, workflow filename
-   `publish.yml`.
-5. **Smoke-test the install**, same as ever:
-   ```powershell
-   npx yadash@latest init smoke
-   npx yadash@latest build smoke.yaml -o C:\Users\bcros\AppData\Local\Temp\smoke
-   ```
-   That's the real test: it proves `npx` works for a stranger with an empty
-   cache.
-
-From here on, every release is: bump the version, tag it, push the tag —
-`publish.yml` does the rest with zero tokens involved:
+**The first publish also needed a manual bootstrap token**, not a Trusted
+Publisher: npm won't let you configure Trusted Publishing (OIDC) for a package
+that doesn't exist on the registry yet, and there's a currently-open npm CLI
+bug ([npm/cli#9268](https://github.com/npm/cli/issues/9268)) where granular
+access tokens with "Bypass 2FA" checked still get rejected on `npm publish`.
+What actually worked: a plain (non-bypass) read/write token plus explicitly
+passing `--otp=<code>` on the command line rather than waiting for an
+interactive prompt (the CLI wasn't triggering the prompt on its own). That
+bootstrap token has since been revoked. Now that `@blcrosbie/yadash` exists on
+the registry, **`.github/workflows/publish.yml` should be wired up as a
+Trusted Publisher** (npmjs.com → package Settings → Trusted Publisher →
+GitHub Actions → org/user `blcrosbie`, repo `yadash`, workflow filename
+`publish.yml`) so every future release needs zero tokens:
 
 ```powershell
-git tag v0.1.0
+git tag v0.1.1
 git push --tags
 ```
-
-Then draw a GitHub Release from that tag using `CHANGELOG.md`'s `0.1.0` notes.
 
 Adoption dies at the install step. Cover the three shapes of user:
 
 | user | install | needs |
 |---|---|---|
-| "just give me the CLI" | `npx yadash init sales` | npm publish |
+| "just give me the CLI" | `npx @blcrosbie/yadash init sales` | npm publish ✅ |
 | Claude Code user | `/plugin marketplace add blcrosbie/yadash` then `/plugin install yadash@blcrosbie` | `.claude-plugin/{plugin,marketplace}.json` ✅ |
-| Codex / other agent | `codex plugin marketplace add blcrosbie/yadash`, or `npx yadash skill install --codex` | root `plugin.json` + `skills/` ✅ |
+| Codex / other agent | `codex plugin marketplace add blcrosbie/yadash`, or `npx @blcrosbie/yadash skill install --codex` | root `plugin.json` + `skills/` ✅ |
 
-The repo already carries all three manifests. What is left:
+The repo already carries all three manifests.
 
-1. **Publish to npm.** `yadash` is the name the docs assume, so check it is free
-   (`npm view yadash`) before anything else; if taken, rename now, not later —
-   the name is in the skill, the README, and every install line.
-   ```bash
-   npm whoami                 # or: npm login
-   npm test && npm run validate:examples
-   npm publish --access public
-   npx yadash@latest init smoke && npx yadash@latest build smoke.yaml -o /tmp/smoke
+1. **Smoke-test the published package** (PowerShell — run each line
+   separately, `&&` isn't valid PowerShell syntax):
+   ```powershell
+   npx @blcrosbie/yadash@latest init smoke
+   npx @blcrosbie/yadash@latest build smoke.yaml -o C:\Users\bcros\AppData\Local\Temp\smoke
    ```
-   That last line is the real test: it proves `npx` works for a stranger with an
-   empty cache.
-2. **Tag the release.** `git tag v0.1.0 && git push --tags`, then a GitHub
+   That's the real test: it proves `npx` works for a stranger with an empty
+   cache.
+2. **Tag the release.** `git tag v0.1.0` then `git push --tags`, then a GitHub
    Release with the same notes as `CHANGELOG.md`. Plugin marketplaces and skill
    directories read tags and releases to decide whether a repo is alive.
 3. **Verify the plugin install paths yourself**, in a scratch directory:
-   `claude --plugin-dir .` for the Claude side, `npx yadash skill install --codex`
-   for the Codex side. A broken install line in a launch post is unrecoverable.
+   `claude --plugin-dir .` for the Claude side, `npx @blcrosbie/yadash skill
+   install --codex` for the Codex side. A broken install line in a launch post
+   is unrecoverable.
 
 ## Phase 1 — the 60-second proof
 
