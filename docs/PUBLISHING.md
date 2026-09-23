@@ -6,6 +6,31 @@ agent they already use. Everything below is ordered by that.
 
 ## Phase 0 — be installable three ways (before telling anyone)
 
+**Status (2026-09-23):** repo history is pushed to `blcrosbie/yadash` on GitHub
+(origin remote already points there). `npm whoami` confirms you're logged in
+as `blcrosbie`. The npm registry has never had a `yadash` package, so the name
+is free. The only thing blocking `npm publish` is that npm requires a 2FA
+one-time code for publishes on this account, and it wasn't practical to relay
+that OTP through this chat in time before it expired. Finish it from your own
+terminal:
+
+```bash
+cd C:\Users\bcros\dev\blcrosbie\yadash
+npm test && npm run validate:examples   # already green as of this writing
+npm publish --access public             # npm will prompt for your OTP interactively
+npx yadash@latest init smoke && npx yadash@latest build smoke.yaml -o /tmp/smoke
+```
+
+That last line is the real test: it proves `npx` works for a stranger with an
+empty cache. Once it's published, come back to Claude (or just run the two
+commands below yourself) to finish tagging the release:
+
+```bash
+git tag v0.1.0 && git push --tags
+```
+
+Then draw a GitHub Release from that tag using `CHANGELOG.md`'s `0.1.0` notes.
+
 Adoption dies at the install step. Cover the three shapes of user:
 
 | user | install | needs |
