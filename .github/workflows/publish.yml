@@ -1,0 +1,34 @@
+# Publishes to npm via Trusted Publishing (OIDC) — no long-lived token stored
+# anywhere. Requires a one-time setup on npmjs.com: package Settings ->
+# Trusted Publisher -> GitHub Actions, with:
+#   organization/user: blcrosbie
+#   repository:         yadash
+#   workflow filename:  publish.yml
+# See docs/PUBLISHING.md for the full bootstrap steps.
+name: publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: 'https://registry.npmjs.org'
+      # Trusted publishing (OIDC) needs npm >= 11.5.1; ubuntu-latest's bundled
+      # npm may be older.
+      - run: npm install -g npm@latest
+      - run: npm test
+      - run: npm run validate:examples
+      - run: npm publish --access public

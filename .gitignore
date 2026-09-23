@@ -4,3 +4,4 @@ site/
 .yadash-dev/
 *.log
 .DS_Store
+.npmrc
