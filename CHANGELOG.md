@@ -4,7 +4,21 @@ All notable changes to yadash. The YAML `version: 1` field is the spec version;
 while yadash is 0.x, the spec may still change — breaking changes are called out
 here explicitly.
 
-## 0.1.0 — unreleased
+## 0.1.1 — unreleased
+
+- **Fix: every chart widget rendered blank.** `.yd-chart` sized itself with
+  `position: absolute; inset: 0`, but ECharts sets an inline
+  `position: relative` on its container during `init()`, silently overriding
+  the CSS and collapsing it to zero height. Affected `line`, `area`, `bar`,
+  `stacked_bar`, `hbar`, `pie`, `donut` and `scatter` in every dashboard,
+  including the `0.1.0` `sales.yaml` and `support.yaml` examples. `kpi`,
+  `table` and `markdown` were unaffected.
+- **Add `examples/ecommerce.yaml` and `examples/marketing.yaml`**, two more
+  complete example dashboards with generated synthetic data
+  (`scripts/generate-example-data.mjs`), plus a sample-prompts section in the
+  README.
+
+## 0.1.0 — 2026-09-23
 
 First release.
 

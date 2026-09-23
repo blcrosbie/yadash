@@ -1,6 +1,6 @@
 {
   "name": "@blcrosbie/yadash",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dashboards as YAML. Validate it, compile it to a static page, host it anywhere - and let an agent maintain the config instead of your JSX.",
   "type": "module",
   "license": "MIT",
