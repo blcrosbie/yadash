@@ -9,32 +9,57 @@ agent they already use. Everything below is ordered by that.
 **Status (2026-09-23):** repo history is pushed to `blcrosbie/yadash` on GitHub
 (origin remote already points there). `npm whoami` confirms you're logged in
 as `blcrosbie`. The npm registry has never had a `yadash` package, so the name
-is free. The only thing blocking `npm publish` is that npm requires a 2FA
-one-time code for publishes on this account, and it wasn't practical to relay
-that OTP through this chat in time before it expired. Finish it from your own
-terminal:
+is free.
 
-On PowerShell, run each line separately — `&&` is a bash/zsh operator and
-PowerShell 5.1 doesn't support it:
+**`npm publish` from the CLI is currently blocked by npm's own 2026 2FA
+lockdown**, not by anything in this repo: npm is phasing out direct publishing
+from both bypass-2FA granular tokens and the old inline-OTP prompt (full
+removal of bypass-2FA direct publish is targeted for January 2027, and in
+practice the inline OTP prompt on `npm publish` did not appear at all for this
+account — it 403'd immediately with `Two-factor authentication or granular
+access token with bypass 2fa enabled is required to publish packages`). The
+npm-recommended replacement is **Trusted Publishing (OIDC)**: GitHub Actions
+publishes directly, authenticated by a short-lived token npm issues per run —
+no npm token stored anywhere, ever. `.github/workflows/publish.yml` in this
+repo is already wired up for it (triggers on `v*` tags or manual dispatch).
 
-```powershell
-cd C:\Users\bcros\dev\blcrosbie\yadash
-npm test                                # already green as of this writing
-npm run validate:examples               # already green as of this writing
-npm publish --access public             # npm will prompt for your OTP interactively
-npx yadash@latest init smoke
-npx yadash@latest build smoke.yaml -o C:\Users\bcros\AppData\Local\Temp\smoke
-```
+The catch: npm will not let you configure a Trusted Publisher for a package
+that doesn't exist on the registry yet, so the very first publish has to be
+done by hand with a token. Bootstrap it once, then never touch a token again:
 
-On bash/zsh, the chained form works fine:
+1. **Create a short-lived bootstrap token.** npmjs.com → Profile → Access
+   Tokens → Generate New Token → Granular Access Token → Read and write →
+   scope it to the `yadash` package (or "All packages" if `yadash` isn't
+   selectable yet, since it doesn't exist) → set the shortest expiry offered →
+   check **Bypass 2FA for token-based write actions**. Copy the token.
+2. **Publish once, locally, with that token** (PowerShell — run each line
+   separately, `&&` isn't valid PowerShell syntax):
+   ```powershell
+   cd C:\Users\bcros\dev\blcrosbie\yadash
+   npm test
+   npm run validate:examples
+   "//registry.npmjs.org/:_authToken=PASTE_TOKEN_HERE" | Out-File -Encoding ascii -Append .npmrc
+   npm publish --access public
+   Remove-Item .npmrc
+   ```
+   `.npmrc` is gitignored, but delete it anyway right after — don't leave the
+   token sitting on disk.
+3. **Revoke the bootstrap token immediately** on npmjs.com (Access Tokens →
+   delete). It only ever needed to exist for step 2.
+4. **Configure Trusted Publishing** on npmjs.com, now that `yadash` exists:
+   package page → Settings → Trusted Publisher → GitHub Actions →
+   organization/user `blcrosbie`, repository `yadash`, workflow filename
+   `publish.yml`.
+5. **Smoke-test the install**, same as ever:
+   ```powershell
+   npx yadash@latest init smoke
+   npx yadash@latest build smoke.yaml -o C:\Users\bcros\AppData\Local\Temp\smoke
+   ```
+   That's the real test: it proves `npx` works for a stranger with an empty
+   cache.
 
-```bash
-npm test && npm run validate:examples && npm publish --access public
-npx yadash@latest init smoke && npx yadash@latest build smoke.yaml -o /tmp/smoke
-```
-
-That last line is the real test: it proves `npx` works for a stranger with an
-empty cache. Once it's published, finish tagging the release:
+From here on, every release is: bump the version, tag it, push the tag —
+`publish.yml` does the rest with zero tokens involved:
 
 ```powershell
 git tag v0.1.0
