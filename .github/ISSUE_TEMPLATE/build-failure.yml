@@ -1,0 +1,32 @@
+name: Dashboard will not build
+description: A dashboard YAML fails to validate or build, or renders wrong
+labels: [bug]
+body:
+  - type: textarea
+    id: yaml
+    attributes:
+      label: The YAML
+      description: Trimmed to the smallest case that still fails. Remove anything private.
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Output of `yadash validate <file> --json --strict`
+      render: json
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected to happen
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: yadash version and Node version
+      placeholder: "yadash 0.1.0, node 20.11.0"
+    validations:
+      required: true

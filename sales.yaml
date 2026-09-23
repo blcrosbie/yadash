@@ -1,0 +1,94 @@
+# sales - edit this file, run `yadash dev sales.yaml`, refresh.
+# Schema: schema/dashboard.schema.json
+# yaml-language-server: $schema=https://yadash.dev/schema/v0.1/dashboard.schema.json
+version: 1
+
+dashboard:
+  id: sales
+  title: sales
+  theme: auto
+
+  data:
+    activity:
+      type: csv
+      path: data/sales.csv
+      date_fields: [date]
+
+  metrics:
+    meetings:
+      agg: sum
+      field: meetings
+      label: Meetings
+    show_rate:
+      agg: ratio
+      field: showed
+      of: meetings
+      label: Show rate
+      format: percent
+    revenue:
+      agg: sum
+      field: amount
+      label: Revenue
+      format: currency
+
+  filters:
+    - field: date
+      type: date_range
+      label: Date
+    - field: rep
+      label: Rep
+    - field: source
+      label: Source
+
+  layout:
+    columns: 12
+
+  widgets:
+    - id: total_meetings
+      type: kpi
+      title: Meetings
+      metric: meetings
+      position: [1, 1]
+      size: [3, 2]
+
+    - id: show_rate
+      type: kpi
+      title: Show rate
+      metric: show_rate
+      thresholds:
+        - below: 0.5
+          state: bad
+          label: Below target
+      position: [4, 1]
+      size: [3, 2]
+
+    - id: revenue
+      type: kpi
+      title: Revenue
+      metric: revenue
+      compare: previous_period
+      position: [7, 1]
+      size: [3, 2]
+
+    - id: trend
+      type: line
+      title: Meetings over time
+      x:
+        field: date
+        bucket: week
+      y:
+        metric: meetings
+      position: [1, 3]
+      size: [8, 5]
+
+    - id: by_rep
+      type: table
+      title: Rep performance
+      dimensions:
+        - field: rep
+      metrics: [meetings, show_rate, revenue]
+      sort:
+        by: meetings
+        direction: desc
+      position: [9, 3]
+      size: [4, 5]

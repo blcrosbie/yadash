@@ -1,0 +1,144 @@
+# yaml-language-server: $schema=../schema/dashboard.schema.json
+version: 1
+
+dashboard:
+  id: support-load
+  title: Support Load & Response Time
+  description: Ticket volume, first response and CSAT by team.
+  theme: dark
+
+  data:
+    tickets:
+      type: json
+      path: ./data/support_tickets.json
+      date_fields: [created_date]
+
+  metrics:
+    tickets:
+      agg: count
+      label: Tickets
+    resolved_rate:
+      agg: avg
+      field: resolved
+      label: Resolved
+      format: percent
+    first_response:
+      agg: avg
+      field: first_response_minutes
+      label: First response (min)
+      decimals: 0
+    handle_time:
+      agg: avg
+      field: handle_minutes
+      label: Handle time (min)
+      decimals: 0
+    csat:
+      agg: avg
+      field: csat
+      label: CSAT
+      decimals: 2
+    urgent_tickets:
+      agg: count
+      label: Urgent tickets
+      where:
+        - field: priority
+          value: urgent
+
+  filters:
+    - field: created_date
+      type: date_range
+      label: Created
+    - field: team
+      label: Team
+    - field: channel
+      label: Channel
+
+  layout:
+    columns: 12
+    row_height: 64
+    max_width: 1320
+
+  widgets:
+    - id: kpi_tickets
+      type: kpi
+      title: Tickets
+      metric: tickets
+      compare: previous_period
+      position: [1, 1]
+      size: [3, 2]
+
+    - id: kpi_response
+      type: kpi
+      title: First response
+      metric: first_response
+      thresholds:
+        - above: 40
+          state: bad
+          label: Slow
+      position: [4, 1]
+      size: [3, 2]
+
+    - id: kpi_csat
+      type: kpi
+      title: CSAT
+      metric: csat
+      target: 4.5
+      thresholds:
+        - below: 4
+          state: warn
+          label: Watch
+      position: [7, 1]
+      size: [3, 2]
+
+    - id: kpi_urgent
+      type: kpi
+      title: Urgent
+      metric: urgent_tickets
+      position: [10, 1]
+      size: [3, 2]
+
+    - id: volume
+      type: area
+      title: Tickets per day
+      x:
+        field: created_date
+        bucket: day
+      y:
+        metric: tickets
+      position: [1, 3]
+      size: [12, 4]
+
+    - id: by_team
+      type: hbar
+      title: Tickets by team
+      dimension:
+        field: team
+      metric: tickets
+      show_labels: true
+      position: [1, 7]
+      size: [6, 5]
+
+    - id: priority_mix
+      type: bar
+      title: First response by priority
+      x:
+        field: priority
+      y:
+        metric: first_response
+        label: Minutes
+      position: [7, 7]
+      size: [6, 5]
+
+    - id: team_table
+      type: table
+      title: Team detail
+      dimensions:
+        - field: team
+        - field: channel
+      metrics: [tickets, first_response, handle_time, csat]
+      sort:
+        by: tickets
+        direction: desc
+      limit: 12
+      position: [1, 12]
+      size: [12, 6]

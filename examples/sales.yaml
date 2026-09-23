@@ -1,0 +1,185 @@
+# yaml-language-server: $schema=../schema/dashboard.schema.json
+version: 1
+
+dashboard:
+  id: sales-health
+  title: Sales Activity & Meeting Health
+  description: Booked vs held meetings, pipeline and close rate by rep.
+  theme: auto
+
+  data:
+    activity:
+      type: csv
+      path: ./data/sales_activity.csv
+      date_fields: [engagement_date]
+
+  metrics:
+    meetings_booked:
+      agg: sum
+      field: meetings_booked
+      label: Meetings booked
+    meetings_held:
+      agg: sum
+      field: meetings_held
+      label: Meetings held
+    show_rate:
+      agg: ratio
+      field: meetings_held
+      of: meetings_booked
+      label: Show rate
+      format: percent
+    pipeline:
+      agg: sum
+      field: pipeline_amount
+      label: Pipeline
+      format: currency
+    closed:
+      agg: sum
+      field: closed_amount
+      label: Closed
+      format: currency
+    close_rate:
+      agg: ratio
+      field: closed_amount
+      of: pipeline_amount
+      label: Close rate
+      format: percent
+    reps_active:
+      agg: distinct_count
+      field: sales_rep
+      label: Active reps
+
+  filters:
+    - field: engagement_date
+      type: date_range
+      label: Date range
+    - field: sales_rep
+      label: Rep
+    - field: source
+      label: Source
+    - field: activity_type
+      type: multiselect
+      label: Activity type
+
+  layout:
+    columns: 12
+    gap: 16
+    row_height: 64
+
+  widgets:
+    - id: kpi_booked
+      type: kpi
+      title: Meetings booked
+      metric: meetings_booked
+      compare: previous_period
+      position: [1, 1]
+      size: [3, 2]
+
+    - id: kpi_show_rate
+      type: kpi
+      title: Show rate
+      metric: show_rate
+      thresholds:
+        - below: 0.7
+          state: bad
+          label: Below target
+        - above: 0.8
+          state: good
+          label: On track
+      position: [4, 1]
+      size: [3, 2]
+
+    - id: kpi_pipeline
+      type: kpi
+      title: Pipeline created
+      metric: pipeline
+      compare: previous_period
+      position: [7, 1]
+      size: [3, 2]
+
+    - id: kpi_closed
+      type: kpi
+      title: Closed won
+      metric: closed
+      compare: previous_period
+      position: [10, 1]
+      size: [3, 2]
+
+    - id: trend
+      type: line
+      title: Meetings held per week
+      x:
+        field: engagement_date
+        bucket: week
+      y:
+        metric: meetings_held
+        label: Meetings
+      smooth: true
+      position: [1, 3]
+      size: [8, 5]
+
+    - id: source_mix
+      type: donut
+      title: Pipeline by source
+      dimension:
+        field: source
+      metric: pipeline
+      position: [9, 3]
+      size: [4, 5]
+
+    - id: region_trend
+      type: stacked_bar
+      title: Pipeline by region, by month
+      x:
+        field: engagement_date
+        bucket: month
+      y:
+        metric: pipeline
+      series:
+        field: region
+      position: [1, 8]
+      size: [8, 5]
+
+    - id: rep_table
+      type: table
+      title: Rep performance
+      dimensions:
+        - field: sales_rep
+          label: Rep
+      metrics: [meetings_booked, meetings_held, show_rate, pipeline, closed]
+      columns:
+        - key: sales_rep
+          label: Rep
+        - key: meetings_booked
+          label: Booked
+          bar: true
+        - key: meetings_held
+          label: Held
+        - key: show_rate
+          label: Show rate
+          thresholds:
+            - below: 0.7
+              state: bad
+            - above: 0.8
+              state: good
+        - key: pipeline
+          label: Pipeline
+        - key: closed
+          label: Closed
+      sort:
+        by: pipeline
+        direction: desc
+      position: [9, 8]
+      size: [4, 5]
+
+    - id: notes
+      type: markdown
+      title: How to read this
+      text: |
+        **Show rate** is held / booked for the rows currently in view, so every
+        filter above changes it.
+
+        Edit `examples/sales.yaml` and refresh - layout, metrics and thresholds
+        all live in that one file.
+      position: [1, 13]
+      size: [12, 2]

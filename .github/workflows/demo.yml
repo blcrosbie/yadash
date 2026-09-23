@@ -1,0 +1,59 @@
+# Publishes the example dashboards to GitHub Pages so the README can link to a
+# live demo. Enable Pages for the repo with "Source: GitHub Actions" first.
+name: demo
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build the example dashboards
+        run: |
+          set -e
+          repo="${GITHUB_REPOSITORY#*/}"
+          for f in examples/*.yaml skills/yadash/examples/*.yaml; do
+            id=$(basename "${f%.yaml}")
+            node bin/yadash.mjs build "$f" -o "site/$id" --base "/$repo/$id/" --strict
+          done
+          node -e '
+            const { readdirSync, writeFileSync } = require("fs");
+            const dirs = readdirSync("site", { withFileTypes: true })
+              .filter((d) => d.isDirectory()).map((d) => d.name);
+            writeFileSync("site/index.html", `<!doctype html><meta charset="utf-8">
+          <title>yadash demos</title>
+          <style>body{font:16px/1.6 system-ui;max-width:42rem;margin:4rem auto;padding:0 1rem}</style>
+          <h1>yadash demos</h1>
+          <p>Each page below is one YAML file compiled to a single static HTML page.</p>
+          <ul>${dirs.map((d) => `<li><a href="./${d}/">${d}</a></li>`).join("")}</ul>
+          <p><a href="https://github.com/${process.env.GITHUB_REPOSITORY}">source</a></p>`);
+          '
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
