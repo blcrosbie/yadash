@@ -1,0 +1,122 @@
+# Live data pattern: the page fetches rows from your own endpoint at view time,
+# re-fetching every 60s. Nothing secret lives in this file - the endpoint must
+# be readable by whoever can open the dashboard (same-origin session cookie,
+# a signed URL, or a public aggregate endpoint).
+# yaml-language-server: $schema=https://yadash.dev/schema/v0.1/dashboard.schema.json
+version: 1
+
+dashboard:
+  id: ops-live
+  title: Support Operations
+  theme: dark
+  accent: "#3987e5"
+
+  data:
+    tickets:
+      type: api
+      url: /api/tickets          # must return JSON; use root: for nested payloads
+      root: data.rows
+      refresh: 60
+      date_fields: [created_at, resolved_at]
+
+  metrics:
+    open_tickets:
+      agg: count
+      label: Open tickets
+      where:
+        - { field: status, op: not_in, value: [resolved, closed] }
+    backlog_over_sla:
+      agg: count
+      label: Over SLA
+      where:
+        - { field: hours_open, op: gt, value: 24 }
+        - { field: status, op: not_in, value: [resolved, closed] }
+    first_response:
+      agg: avg
+      field: first_response_seconds
+      label: Avg first response
+      format: duration
+    resolution_rate:
+      agg: ratio
+      field: resolved_count
+      of: ticket_count
+      label: Resolution rate
+      format: percent
+
+  filters:
+    - field: created_at
+      type: date_range
+      label: Created
+    - field: queue
+      label: Queue
+    - field: priority
+      type: multiselect
+      label: Priority
+
+  layout:
+    columns: 12
+    max_width: 1600
+
+  widgets:
+    - id: kpi_open
+      type: kpi
+      title: Open
+      metric: open_tickets
+      position: [1, 1]
+      size: [3, 2]
+
+    - id: kpi_sla
+      type: kpi
+      title: Over SLA
+      metric: backlog_over_sla
+      thresholds:
+        - above: 0
+          state: warn
+        - above: 10
+          state: bad
+          label: Escalate
+      position: [4, 1]
+      size: [3, 2]
+
+    - id: kpi_response
+      type: kpi
+      title: Avg first response
+      metric: first_response
+      position: [7, 1]
+      size: [3, 2]
+
+    - id: kpi_resolution
+      type: kpi
+      title: Resolution rate
+      metric: resolution_rate
+      compare: previous_period
+      position: [10, 1]
+      size: [3, 2]
+
+    - id: volume
+      type: stacked_bar
+      title: Tickets by priority, by day
+      x: { field: created_at, bucket: day }
+      y: { metric: open_tickets }
+      series: { field: priority }
+      position: [1, 3]
+      size: [8, 5]
+
+    - id: queues
+      type: hbar
+      title: Backlog by queue
+      dimension: { field: queue, limit: 8 }
+      metric: open_tickets
+      show_labels: true
+      position: [9, 3]
+      size: [4, 5]
+
+    - id: caveats
+      type: markdown
+      title: Definitions
+      text: |
+        **Over SLA** counts unresolved tickets open more than 24 hours.
+        Numbers refresh every 60 seconds from `/api/tickets`; field checks are
+        skipped for `api` sources, so verify field names against the endpoint.
+      position: [1, 8]
+      size: [12, 2]

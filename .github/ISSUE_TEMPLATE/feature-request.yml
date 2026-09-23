@@ -1,0 +1,26 @@
+name: Feature request
+description: A widget, metric, format or workflow yadash does not cover yet
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the **outcome** you need rather than the chart-library option
+        you would reach for. The DSL is deliberately semantic — there is no
+        JavaScript escape hatch — so the useful question is what a reader of the
+        dashboard should be able to see or do.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What should the dashboard be able to show or do?
+    validations:
+      required: true
+  - type: textarea
+    id: yaml
+    attributes:
+      label: How you imagine the YAML looking
+      render: yaml
+  - type: textarea
+    id: workaround
+    attributes:
+      label: What you are doing instead today

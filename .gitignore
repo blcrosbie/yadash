@@ -1,0 +1,6 @@
+node_modules/
+dist/
+site/
+.yadash-dev/
+*.log
+.DS_Store

@@ -1,0 +1,50 @@
+{
+  "name": "yadash",
+  "version": "0.1.0",
+  "description": "Dashboards as YAML. Validate it, compile it to a static page, host it anywhere - and let an agent maintain the config instead of your JSX.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "yadash": "bin/yadash.mjs"
+  },
+  "exports": {
+    ".": "./src/compile.mjs",
+    "./schema": "./schema/dashboard.schema.json"
+  },
+  "files": [
+    "bin",
+    "src",
+    "schema",
+    "skills",
+    "examples",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/run-tests.mjs",
+    "validate:examples": "node bin/yadash.mjs validate examples",
+    "build:examples": "node bin/yadash.mjs build examples/sales.yaml -o dist/sales && node bin/yadash.mjs build examples/support.yaml -o dist/support"
+  },
+  "keywords": [
+    "dashboard",
+    "yaml",
+    "dashboard-as-code",
+    "bi",
+    "analytics",
+    "echarts",
+    "claude",
+    "agent",
+    "skill",
+    "static-site",
+    "embed"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blcrosbie/yadash.git"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

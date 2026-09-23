@@ -1,0 +1,22 @@
+{
+  "name": "yadash",
+  "version": "0.1.0",
+  "description": "Dashboards as YAML. Describe a dashboard in one file, compile it to a static page, deploy it anywhere - and let the agent maintain the config instead of your JSX.",
+  "author": {
+    "name": "Halogen Solutions",
+    "url": "https://github.com/blcrosbie/yadash"
+  },
+  "homepage": "https://github.com/blcrosbie/yadash",
+  "repository": "https://github.com/blcrosbie/yadash",
+  "license": "MIT",
+  "keywords": [
+    "dashboard",
+    "analytics",
+    "bi",
+    "yaml",
+    "dashboard-as-code",
+    "charts",
+    "echarts",
+    "embed"
+  ]
+}
