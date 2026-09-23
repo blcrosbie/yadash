@@ -17,4 +17,4 @@ Request: $ARGUMENTS
 4. Run `yadash validate <file> --json --strict` and fix every error and warning.
 5. Run `yadash build <file> -o dist/<id>`.
 6. Report: what changed (by widget id), the output path, and the one-liner to
-   preview it (`npx yadash dev <file>`).
+   preview it (`npx @blcrosbie/yadash dev <file>`).

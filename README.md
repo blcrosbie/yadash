@@ -23,7 +23,7 @@ dashboard:
 ```
 
 ```bash
-npx yadash build sales.yaml -o dist/sales
+npx @blcrosbie/yadash build sales.yaml -o dist/sales
 # -> dist/sales/index.html   drop it on Pages, S3, WordPress, anywhere
 ```
 
@@ -57,8 +57,8 @@ yadash is the small version of the good idea:
 ## Install
 
 ```bash
-npx yadash init sales        # starter dashboard + 60 days of sample data
-npx yadash dev sales.yaml    # http://localhost:4321, rebuilds on refresh
+npx @blcrosbie/yadash init sales        # starter dashboard + 60 days of sample data
+npx @blcrosbie/yadash dev sales.yaml    # http://localhost:4321, rebuilds on refresh
 ```
 
 Or clone it — there are no dependencies, so `node bin/yadash.mjs build x.yaml`
@@ -72,9 +72,9 @@ anything else that reads `SKILL.md` how to author, edit, audit and deploy these
 files.
 
 ```bash
-npx yadash skill install            # -> ./.claude/skills/yadash (this project)
-npx yadash skill install --global   # -> ~/.claude/skills/yadash
-npx yadash skill install --codex    # -> ~/.codex/skills/yadash
+npx @blcrosbie/yadash skill install            # -> ./.claude/skills/yadash (this project)
+npx @blcrosbie/yadash skill install --global   # -> ~/.claude/skills/yadash
+npx @blcrosbie/yadash skill install --codex    # -> ~/.codex/skills/yadash
 ```
 
 Claude Code users can install the whole plugin (skill + `/dashboard` and
