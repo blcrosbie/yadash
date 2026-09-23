@@ -23,7 +23,7 @@
   "scripts": {
     "test": "node test/run-tests.mjs",
     "validate:examples": "node bin/yadash.mjs validate examples",
-    "build:examples": "node bin/yadash.mjs build examples/sales.yaml -o dist/sales && node bin/yadash.mjs build examples/support.yaml -o dist/support"
+    "build:examples": "node bin/yadash.mjs build examples/sales.yaml -o dist/sales && node bin/yadash.mjs build examples/support.yaml -o dist/support && node bin/yadash.mjs build examples/ecommerce.yaml -o dist/ecommerce && node bin/yadash.mjs build examples/marketing.yaml -o dist/marketing"
   },
   "keywords": [
     "dashboard",

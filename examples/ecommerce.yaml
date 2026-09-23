@@ -1,0 +1,176 @@
+# yaml-language-server: $schema=../schema/dashboard.schema.json
+version: 1
+
+dashboard:
+  id: ecommerce-orders
+  title: Store Performance
+  description: Revenue, order mix and new-customer rate by channel and category.
+  theme: auto
+
+  data:
+    orders:
+      type: csv
+      path: ./data/orders.csv
+      date_fields: [order_date]
+
+  metrics:
+    revenue:
+      agg: sum
+      field: revenue
+      label: Revenue
+      format: currency
+    orders:
+      agg: count
+      label: Orders
+    units:
+      agg: sum
+      field: units
+      label: Units sold
+    aov:
+      agg: avg
+      field: revenue
+      label: Avg order value
+      format: currency
+    new_customer_rate:
+      agg: avg
+      field: new_customer
+      label: New customers
+      format: percent
+
+  filters:
+    - field: order_date
+      type: date_range
+      label: Date range
+    - field: channel
+      type: multiselect
+      label: Channel
+    - field: category
+      label: Category
+
+  layout:
+    columns: 12
+    gap: 16
+    row_height: 64
+
+  widgets:
+    - id: kpi_revenue
+      type: kpi
+      title: Revenue
+      metric: revenue
+      compare: previous_period
+      position: [1, 1]
+      size: [3, 2]
+
+    - id: kpi_orders
+      type: kpi
+      title: Orders
+      metric: orders
+      compare: previous_period
+      position: [4, 1]
+      size: [3, 2]
+
+    - id: kpi_aov
+      type: kpi
+      title: Avg order value
+      metric: aov
+      position: [7, 1]
+      size: [3, 2]
+
+    - id: kpi_new_customers
+      type: kpi
+      title: New customers
+      metric: new_customer_rate
+      target: 0.4
+      thresholds:
+        - below: 0.25
+          state: bad
+          label: Low
+        - above: 0.4
+          state: good
+          label: Healthy
+      position: [10, 1]
+      size: [3, 2]
+
+    - id: trend
+      type: line
+      title: Revenue per week
+      x:
+        field: order_date
+        bucket: week
+      y:
+        metric: revenue
+      smooth: true
+      position: [1, 3]
+      size: [8, 5]
+
+    - id: category_mix
+      type: donut
+      title: Revenue by category
+      dimension:
+        field: category
+      metric: revenue
+      position: [9, 3]
+      size: [4, 5]
+
+    - id: channel_trend
+      type: stacked_bar
+      title: Revenue by channel, by week
+      x:
+        field: order_date
+        bucket: week
+      y:
+        metric: revenue
+      series:
+        field: channel
+      show_legend: true
+      position: [1, 8]
+      size: [8, 5]
+
+    - id: top_products
+      type: hbar
+      title: Top products by revenue
+      dimension:
+        field: product
+        limit: 8
+      metric: revenue
+      show_labels: true
+      position: [9, 8]
+      size: [4, 5]
+
+    - id: category_table
+      type: table
+      title: Category detail
+      dimensions:
+        - field: category
+          label: Category
+      metrics: [orders, units, revenue, aov]
+      columns:
+        - key: category
+          label: Category
+        - key: orders
+          label: Orders
+          bar: true
+        - key: units
+          label: Units
+        - key: revenue
+          label: Revenue
+        - key: aov
+          label: AOV
+      sort:
+        by: revenue
+        direction: desc
+      position: [1, 13]
+      size: [12, 5]
+
+    - id: notes
+      type: markdown
+      title: How to read this
+      text: |
+        **New customers** is the share of orders where `new_customer` is set,
+        recomputed under every filter — never a snapshot from the day it was
+        pulled.
+
+        Swap `data.orders.path` for a real export and the metrics, thresholds
+        and layout carry over untouched.
+      position: [1, 18]
+      size: [12, 2]
