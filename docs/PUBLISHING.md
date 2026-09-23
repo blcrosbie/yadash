@@ -11,8 +11,8 @@ Adoption dies at the install step. Cover the three shapes of user:
 | user | install | needs |
 |---|---|---|
 | "just give me the CLI" | `npx yadash init sales` | npm publish |
-| Claude Code user | `/plugin marketplace add HalogenSolutions/yadash` then `/plugin install yadash@halogen` | `.claude-plugin/{plugin,marketplace}.json` ✅ |
-| Codex / other agent | `codex plugin marketplace add HalogenSolutions/yadash`, or `npx yadash skill install --codex` | root `plugin.json` + `skills/` ✅ |
+| Claude Code user | `/plugin marketplace add blcrosbie/yadash` then `/plugin install yadash@blcrosbie` | `.claude-plugin/{plugin,marketplace}.json` ✅ |
+| Codex / other agent | `codex plugin marketplace add blcrosbie/yadash`, or `npx yadash skill install --codex` | root `plugin.json` + `skills/` ✅ |
 
 The repo already carries all three manifests. What is left:
 
@@ -132,9 +132,9 @@ rough order of effort-to-payoff:
 
 1. **A WordPress plugin** that registers a Gutenberg block wrapping a built
    dashboard folder in an iframe. WordPress is where the non-technical long tail
-   lives, and "add block → Halogen Dashboard → pick one" is a story no BI tool
+   lives, and "add block → yadash Dashboard → pick one" is a story no BI tool
    can tell. This is the single highest-leverage thing after launch.
-2. **A `yadash` GitHub Action** (`uses: HalogenSolutions/yadash@v1`) that
+2. **A `yadash` GitHub Action** (`uses: blcrosbie/yadash@v1`) that
    validates on PR and deploys on merge. It turns "I tried it" into "it's in our
    pipeline", which is where retention comes from.
 3. **An importer**: `yadash import <superset|metabase|powerbi>` that converts an
