@@ -145,7 +145,11 @@ body {
 .yd-widget-title { font-size: 13px; font-weight: 600; color: var(--yd-ink); margin: 0; }
 .yd-widget-subtitle { font-size: 12px; color: var(--yd-muted); margin: 2px 0 0; }
 .yd-widget-body { flex: 1; min-height: 0; margin-top: 8px; position: relative; }
-.yd-chart { position: absolute; inset: 0; }
+/* width/height: 100% rather than position: absolute; inset: 0 - ECharts sets an
+   inline `position: relative` on its container during init() (it checks the
+   inline style, not the computed style), which would silently override an
+   absolutely-positioned container and collapse it to zero height. */
+.yd-chart { width: 100%; height: 100%; }
 
 .yd-kpi { display: flex; flex-direction: column; justify-content: center; gap: 2px; }
 .yd-kpi-value { font-size: clamp(22px, 4.5vw, 34px); font-weight: 680; letter-spacing: -0.02em; line-height: 1.1; }

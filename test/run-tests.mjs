@@ -322,6 +322,18 @@ test('the plugin manifests are valid and agree on name and version', () => {
   }
 });
 
+test('chart widgets are not sized with position: absolute', () => {
+  // ECharts sets an inline `position: relative` on its container during
+  // init() (it checks the inline style, not the computed style), which
+  // silently overrides a CSS `position: absolute` and collapses the
+  // container to zero height - every chart renders blank with no error.
+  // See src/runtime/runtime.css .yd-chart.
+  const css = readFileSync(join(ROOT, 'src', 'runtime', 'runtime.css'), 'utf8');
+  const rule = css.match(/\.yd-chart\s*\{[^}]*\}/);
+  assert.ok(rule, '.yd-chart rule must exist in runtime.css');
+  assert.doesNotMatch(rule[0], /position:\s*absolute/, '.yd-chart must not rely on position: absolute for sizing');
+});
+
 test('npm package ships the skill', () => {
   const pkg = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
   for (const entry of ['skills', 'schema', 'bin', 'src']) {
