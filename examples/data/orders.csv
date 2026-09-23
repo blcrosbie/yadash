@@ -1,0 +1,391 @@
+order_date,channel,category,product,units,revenue,new_customer
+2026-06-15,direct,Apparel,Wool Scarf,2,73.92,0
+2026-06-15,direct,Electronics,Smart Speaker,1,66.05,0
+2026-06-15,direct,Electronics,USB-C Hub,2,83.43,0
+2026-06-16,paid_search,Home,Desk Lamp,1,38.59,0
+2026-06-16,paid_search,Beauty,Body Lotion,1,24.57,0
+2026-06-16,paid_search,Apparel,Wool Scarf,1,31.74,0
+2026-06-16,organic,Beauty,Matte Lipstick,2,39.75,0
+2026-06-16,organic,Apparel,Denim Jacket,2,158.68,0
+2026-06-16,organic,Beauty,Matte Lipstick,2,41.36,0
+2026-06-17,paid_social,Outdoor,Camp Chair,1,63.25,0
+2026-06-17,organic,Outdoor,Camp Chair,1,53.85,1
+2026-06-17,email,Electronics,Wireless Earbuds,2,178.62,1
+2026-06-17,organic,Electronics,USB-C Hub,1,40.6,1
+2026-06-17,paid_social,Home,Desk Lamp,1,35.2,1
+2026-06-18,paid_social,Home,Ceramic Mug Set,3,87.73,1
+2026-06-18,paid_search,Apparel,Wool Scarf,2,66.66,0
+2026-06-18,paid_search,Outdoor,Trail Backpack,1,98.39,0
+2026-06-18,organic,Beauty,Body Lotion,1,21.71,0
+2026-06-18,organic,Outdoor,Insulated Bottle,1,26.05,1
+2026-06-19,paid_search,Beauty,Matte Lipstick,2,37.32,0
+2026-06-19,organic,Apparel,Denim Jacket,1,76.34,0
+2026-06-19,organic,Beauty,Vitamin C Serum,1,29.59,1
+2026-06-19,email,Home,Throw Blanket,2,82.93,0
+2026-06-19,paid_search,Apparel,Denim Jacket,1,77.93,0
+2026-06-19,email,Electronics,USB-C Hub,1,44.6,0
+2026-06-19,email,Outdoor,Trail Backpack,1,105.09,1
+2026-06-20,organic,Electronics,Smart Speaker,1,61.51,0
+2026-06-20,paid_social,Apparel,Denim Jacket,1,80.72,1
+2026-06-20,email,Electronics,Wireless Earbuds,1,96.58,0
+2026-06-20,organic,Apparel,Classic Tee,2,42.37,0
+2026-06-21,email,Apparel,Wool Scarf,2,63.35,0
+2026-06-21,organic,Beauty,Matte Lipstick,1,20.22,0
+2026-06-21,organic,Home,Throw Blanket,1,46.53,0
+2026-06-21,organic,Outdoor,Camp Chair,1,61,1
+2026-06-21,organic,Electronics,USB-C Hub,1,42.92,1
+2026-06-22,paid_search,Home,Throw Blanket,1,48.22,0
+2026-06-22,paid_social,Apparel,Classic Tee,1,20.57,1
+2026-06-22,email,Electronics,Smart Speaker,1,66.68,0
+2026-06-23,organic,Apparel,Denim Jacket,2,158.42,0
+2026-06-23,organic,Electronics,Wireless Earbuds,1,87.9,1
+2026-06-23,email,Outdoor,Insulated Bottle,1,29.49,1
+2026-06-23,email,Apparel,Wool Scarf,1,33.09,1
+2026-06-24,organic,Apparel,Classic Tee,1,23.72,1
+2026-06-24,email,Beauty,Matte Lipstick,1,17.14,0
+2026-06-24,email,Home,Ceramic Mug Set,1,27.68,1
+2026-06-24,organic,Outdoor,Insulated Bottle,2,49,0
+2026-06-24,organic,Home,Ceramic Mug Set,2,55.44,1
+2026-06-24,paid_search,Apparel,Classic Tee,1,21.17,0
+2026-06-24,paid_social,Beauty,Matte Lipstick,1,17.68,1
+2026-06-25,paid_search,Home,Throw Blanket,1,47.99,0
+2026-06-25,paid_search,Home,Ceramic Mug Set,1,25.93,0
+2026-06-25,paid_search,Home,Desk Lamp,1,40.92,0
+2026-06-25,paid_search,Outdoor,Insulated Bottle,2,49.08,0
+2026-06-25,paid_search,Outdoor,Camp Chair,1,61.89,1
+2026-06-26,email,Apparel,Denim Jacket,3,212.8,0
+2026-06-26,organic,Outdoor,Camp Chair,2,123.26,0
+2026-06-27,organic,Outdoor,Insulated Bottle,2,52.58,0
+2026-06-27,paid_social,Outdoor,Insulated Bottle,1,28.55,0
+2026-06-27,organic,Beauty,Matte Lipstick,1,17.65,0
+2026-06-27,paid_social,Home,Throw Blanket,1,42.97,1
+2026-06-27,email,Home,Ceramic Mug Set,1,28.89,1
+2026-06-27,direct,Outdoor,Insulated Bottle,1,28.38,1
+2026-06-27,paid_social,Apparel,Classic Tee,1,22.41,0
+2026-06-27,paid_social,Outdoor,Insulated Bottle,1,26.98,0
+2026-06-28,paid_search,Electronics,USB-C Hub,2,79.79,0
+2026-06-28,direct,Outdoor,Camp Chair,1,59.39,0
+2026-06-28,email,Outdoor,Insulated Bottle,1,28.87,0
+2026-06-28,paid_search,Apparel,Classic Tee,1,22.51,0
+2026-06-28,paid_search,Home,Throw Blanket,3,138.61,0
+2026-06-28,paid_search,Apparel,Wool Scarf,1,31.8,0
+2026-06-28,organic,Beauty,Body Lotion,2,52.41,1
+2026-06-29,organic,Apparel,Denim Jacket,1,71.74,0
+2026-06-29,direct,Electronics,Smart Speaker,1,61.56,0
+2026-06-29,direct,Electronics,Smart Speaker,1,66.14,0
+2026-06-29,paid_social,Beauty,Body Lotion,1,25.49,0
+2026-06-29,paid_social,Electronics,Wireless Earbuds,1,82.13,1
+2026-06-29,direct,Beauty,Matte Lipstick,2,37.08,0
+2026-06-30,organic,Beauty,Vitamin C Serum,2,65.63,0
+2026-06-30,paid_search,Apparel,Denim Jacket,1,80.64,1
+2026-06-30,organic,Home,Throw Blanket,1,43.56,0
+2026-06-30,paid_social,Outdoor,Insulated Bottle,1,29.51,0
+2026-06-30,email,Apparel,Wool Scarf,1,33.29,1
+2026-06-30,paid_search,Home,Desk Lamp,1,38.39,1
+2026-06-30,organic,Electronics,Smart Speaker,1,62.77,0
+2026-07-01,direct,Electronics,USB-C Hub,2,88.65,0
+2026-07-01,organic,Electronics,Wireless Earbuds,1,81.59,0
+2026-07-01,direct,Electronics,Wireless Earbuds,1,80.58,0
+2026-07-01,paid_social,Apparel,Classic Tee,1,22.28,1
+2026-07-02,email,Electronics,Wireless Earbuds,1,87.39,0
+2026-07-02,direct,Outdoor,Camp Chair,2,121.79,0
+2026-07-02,paid_search,Beauty,Matte Lipstick,2,35.17,0
+2026-07-02,organic,Beauty,Body Lotion,1,25.25,0
+2026-07-02,paid_search,Beauty,Matte Lipstick,1,17.75,0
+2026-07-02,organic,Beauty,Vitamin C Serum,2,64.49,0
+2026-07-03,paid_search,Outdoor,Insulated Bottle,1,28.29,1
+2026-07-03,paid_search,Home,Ceramic Mug Set,2,54.86,1
+2026-07-03,paid_social,Home,Ceramic Mug Set,1,30.54,1
+2026-07-03,organic,Apparel,Wool Scarf,1,37.28,1
+2026-07-03,organic,Home,Ceramic Mug Set,2,59.07,0
+2026-07-03,direct,Apparel,Wool Scarf,2,73.23,1
+2026-07-04,paid_social,Apparel,Wool Scarf,1,35.92,0
+2026-07-04,direct,Outdoor,Camp Chair,1,55.68,0
+2026-07-04,paid_social,Apparel,Wool Scarf,2,73.67,1
+2026-07-04,organic,Outdoor,Trail Backpack,2,199.94,0
+2026-07-04,direct,Apparel,Wool Scarf,1,36.29,1
+2026-07-04,organic,Home,Ceramic Mug Set,1,29.47,1
+2026-07-04,paid_social,Home,Desk Lamp,1,37.01,0
+2026-07-05,email,Apparel,Wool Scarf,1,32.75,1
+2026-07-05,paid_search,Apparel,Denim Jacket,1,72.77,1
+2026-07-05,email,Beauty,Body Lotion,2,45.14,1
+2026-07-05,direct,Outdoor,Camp Chair,1,57.85,1
+2026-07-06,paid_search,Apparel,Classic Tee,2,39.94,0
+2026-07-06,paid_social,Electronics,Wireless Earbuds,1,85.73,0
+2026-07-06,paid_search,Beauty,Matte Lipstick,2,35.04,0
+2026-07-06,email,Electronics,Smart Speaker,2,138.87,1
+2026-07-06,organic,Beauty,Matte Lipstick,1,19.12,0
+2026-07-06,paid_search,Home,Ceramic Mug Set,1,28.89,0
+2026-07-06,organic,Apparel,Denim Jacket,1,71.78,0
+2026-07-07,organic,Home,Throw Blanket,2,87.3,0
+2026-07-07,paid_social,Electronics,Wireless Earbuds,1,86.94,0
+2026-07-07,direct,Outdoor,Trail Backpack,1,90.18,0
+2026-07-07,paid_search,Electronics,Smart Speaker,1,67.56,0
+2026-07-07,organic,Home,Desk Lamp,1,38.41,0
+2026-07-08,direct,Outdoor,Trail Backpack,2,208.54,0
+2026-07-08,organic,Beauty,Body Lotion,1,22.01,0
+2026-07-08,paid_search,Apparel,Wool Scarf,1,36.64,1
+2026-07-08,direct,Home,Ceramic Mug Set,1,30.57,0
+2026-07-09,organic,Apparel,Denim Jacket,1,76.68,1
+2026-07-09,paid_search,Electronics,Wireless Earbuds,1,84.36,0
+2026-07-09,organic,Outdoor,Insulated Bottle,2,57.42,0
+2026-07-10,paid_search,Electronics,Wireless Earbuds,1,89.93,1
+2026-07-10,paid_social,Electronics,Wireless Earbuds,1,85.42,0
+2026-07-10,organic,Home,Desk Lamp,2,71.08,1
+2026-07-10,organic,Electronics,USB-C Hub,2,80.05,0
+2026-07-10,email,Home,Throw Blanket,1,50.12,0
+2026-07-10,organic,Beauty,Body Lotion,1,26.23,0
+2026-07-10,organic,Home,Ceramic Mug Set,2,59.72,0
+2026-07-11,paid_search,Home,Throw Blanket,1,47.11,0
+2026-07-11,email,Outdoor,Trail Backpack,1,91.14,1
+2026-07-11,paid_social,Home,Throw Blanket,1,47.78,0
+2026-07-11,paid_search,Electronics,Wireless Earbuds,1,87.58,1
+2026-07-12,organic,Electronics,Wireless Earbuds,3,247.24,0
+2026-07-12,paid_search,Electronics,Wireless Earbuds,1,96.01,1
+2026-07-12,email,Home,Ceramic Mug Set,3,80.95,0
+2026-07-12,organic,Beauty,Vitamin C Serum,1,33.26,0
+2026-07-12,organic,Outdoor,Insulated Bottle,2,59.18,1
+2026-07-12,organic,Home,Desk Lamp,1,37.52,0
+2026-07-12,paid_social,Home,Desk Lamp,1,35.59,0
+2026-07-12,email,Home,Throw Blanket,2,93.7,1
+2026-07-13,email,Outdoor,Insulated Bottle,1,25.22,0
+2026-07-13,direct,Outdoor,Trail Backpack,2,205.98,1
+2026-07-13,paid_search,Outdoor,Camp Chair,2,115.95,0
+2026-07-13,direct,Electronics,Smart Speaker,2,134.86,1
+2026-07-13,email,Beauty,Body Lotion,1,25.85,1
+2026-07-13,direct,Beauty,Body Lotion,1,23.61,1
+2026-07-13,paid_social,Beauty,Matte Lipstick,1,20.46,0
+2026-07-14,paid_search,Outdoor,Insulated Bottle,2,51.64,1
+2026-07-14,organic,Electronics,Wireless Earbuds,1,93.31,1
+2026-07-14,organic,Apparel,Wool Scarf,2,70.7,0
+2026-07-15,organic,Outdoor,Insulated Bottle,1,28.38,0
+2026-07-15,organic,Electronics,Smart Speaker,2,119.67,1
+2026-07-15,organic,Beauty,Body Lotion,1,21.73,1
+2026-07-15,paid_search,Electronics,Smart Speaker,2,124.3,0
+2026-07-15,paid_search,Home,Throw Blanket,1,46.01,1
+2026-07-16,paid_search,Outdoor,Trail Backpack,1,97.36,1
+2026-07-16,paid_social,Apparel,Classic Tee,1,23.14,1
+2026-07-16,organic,Home,Ceramic Mug Set,1,28.82,1
+2026-07-16,organic,Apparel,Denim Jacket,1,70.87,1
+2026-07-16,direct,Home,Throw Blanket,2,83.29,1
+2026-07-16,paid_social,Outdoor,Insulated Bottle,1,27.63,0
+2026-07-16,paid_search,Electronics,Smart Speaker,1,61.77,1
+2026-07-17,paid_search,Electronics,Wireless Earbuds,1,95,0
+2026-07-17,paid_search,Beauty,Vitamin C Serum,1,32.76,0
+2026-07-17,organic,Apparel,Classic Tee,1,21.82,0
+2026-07-17,paid_search,Electronics,Wireless Earbuds,1,92.88,1
+2026-07-17,paid_search,Home,Desk Lamp,2,76.73,1
+2026-07-17,paid_search,Outdoor,Insulated Bottle,2,52.56,1
+2026-07-17,email,Beauty,Matte Lipstick,1,19.95,1
+2026-07-18,organic,Beauty,Matte Lipstick,1,17.52,0
+2026-07-18,organic,Outdoor,Camp Chair,1,63.44,0
+2026-07-18,organic,Home,Desk Lamp,1,42.04,0
+2026-07-18,paid_search,Beauty,Vitamin C Serum,2,62.24,1
+2026-07-18,paid_social,Outdoor,Insulated Bottle,1,28.2,0
+2026-07-18,paid_social,Electronics,Wireless Earbuds,1,97.16,0
+2026-07-19,organic,Beauty,Matte Lipstick,1,17.39,0
+2026-07-19,organic,Home,Ceramic Mug Set,2,53.79,1
+2026-07-19,direct,Electronics,Smart Speaker,1,68.54,1
+2026-07-19,paid_search,Outdoor,Trail Backpack,1,93.24,0
+2026-07-19,email,Home,Desk Lamp,1,41.26,0
+2026-07-20,organic,Beauty,Matte Lipstick,1,19.32,0
+2026-07-20,paid_search,Electronics,Smart Speaker,2,130.54,0
+2026-07-20,organic,Apparel,Wool Scarf,2,71.82,0
+2026-07-20,direct,Beauty,Matte Lipstick,2,38.22,0
+2026-07-20,paid_social,Apparel,Denim Jacket,1,76.12,0
+2026-07-21,paid_search,Beauty,Matte Lipstick,1,19.67,1
+2026-07-21,paid_social,Beauty,Body Lotion,2,45.19,0
+2026-07-21,organic,Electronics,Wireless Earbuds,1,91.72,1
+2026-07-21,paid_search,Beauty,Vitamin C Serum,1,31.15,0
+2026-07-21,paid_social,Home,Throw Blanket,1,48.08,1
+2026-07-21,email,Beauty,Body Lotion,1,22.57,0
+2026-07-21,email,Home,Throw Blanket,1,48.97,0
+2026-07-22,direct,Home,Ceramic Mug Set,1,25.63,1
+2026-07-22,email,Apparel,Classic Tee,2,40.79,1
+2026-07-22,organic,Beauty,Body Lotion,2,47.85,0
+2026-07-23,organic,Home,Desk Lamp,1,35.35,0
+2026-07-23,paid_search,Home,Desk Lamp,2,73.14,0
+2026-07-23,paid_search,Electronics,Smart Speaker,1,59.78,0
+2026-07-24,direct,Apparel,Wool Scarf,1,34.09,0
+2026-07-24,email,Outdoor,Trail Backpack,1,95.06,0
+2026-07-25,paid_search,Outdoor,Insulated Bottle,2,48.85,0
+2026-07-25,direct,Apparel,Denim Jacket,1,75.73,0
+2026-07-25,email,Home,Desk Lamp,1,38.89,0
+2026-07-25,organic,Outdoor,Trail Backpack,1,101.47,1
+2026-07-25,organic,Apparel,Wool Scarf,3,94.61,1
+2026-07-25,paid_social,Home,Throw Blanket,1,42.26,0
+2026-07-26,direct,Apparel,Denim Jacket,1,74.18,1
+2026-07-26,paid_social,Apparel,Denim Jacket,2,149.15,0
+2026-07-26,organic,Apparel,Denim Jacket,2,159.01,0
+2026-07-26,paid_search,Apparel,Classic Tee,1,20.97,0
+2026-07-26,organic,Home,Desk Lamp,1,37.03,0
+2026-07-26,paid_social,Beauty,Body Lotion,1,24.21,0
+2026-07-26,organic,Apparel,Classic Tee,2,40.97,0
+2026-07-26,email,Home,Desk Lamp,3,112.93,0
+2026-07-26,paid_social,Electronics,Smart Speaker,1,66.33,1
+2026-07-27,email,Electronics,Smart Speaker,2,124.31,0
+2026-07-27,direct,Outdoor,Camp Chair,1,54.59,0
+2026-07-28,paid_search,Apparel,Wool Scarf,2,69.62,0
+2026-07-28,organic,Beauty,Matte Lipstick,2,34.3,1
+2026-07-28,organic,Outdoor,Camp Chair,1,63.16,0
+2026-07-28,organic,Home,Ceramic Mug Set,1,25.71,1
+2026-07-28,paid_social,Electronics,Smart Speaker,1,58.49,0
+2026-07-28,paid_search,Apparel,Wool Scarf,2,65.79,1
+2026-07-28,organic,Electronics,Smart Speaker,1,66.54,0
+2026-07-29,paid_social,Outdoor,Trail Backpack,3,262.95,0
+2026-07-29,organic,Home,Ceramic Mug Set,2,57.53,1
+2026-07-29,organic,Apparel,Classic Tee,2,41.05,0
+2026-07-29,organic,Electronics,Wireless Earbuds,1,83.83,0
+2026-07-29,paid_social,Outdoor,Insulated Bottle,1,28.33,0
+2026-07-29,email,Home,Ceramic Mug Set,1,28.06,1
+2026-07-30,paid_social,Outdoor,Trail Backpack,2,176.91,1
+2026-07-30,paid_social,Apparel,Wool Scarf,1,36.93,0
+2026-07-30,direct,Beauty,Vitamin C Serum,1,31.12,0
+2026-07-30,paid_search,Beauty,Vitamin C Serum,1,32.75,1
+2026-07-31,email,Outdoor,Insulated Bottle,1,24.31,1
+2026-07-31,paid_search,Outdoor,Insulated Bottle,2,49.73,1
+2026-07-31,paid_search,Outdoor,Trail Backpack,1,99.6,1
+2026-08-01,paid_social,Electronics,Smart Speaker,1,68.39,0
+2026-08-01,paid_social,Home,Ceramic Mug Set,1,30.31,0
+2026-08-01,organic,Home,Ceramic Mug Set,1,30.01,0
+2026-08-01,direct,Electronics,USB-C Hub,1,39.97,0
+2026-08-01,organic,Electronics,Smart Speaker,1,61.25,0
+2026-08-01,email,Home,Desk Lamp,1,42.53,0
+2026-08-01,organic,Electronics,USB-C Hub,1,41.19,0
+2026-08-01,organic,Electronics,USB-C Hub,1,42.88,1
+2026-08-02,organic,Home,Desk Lamp,1,36.74,0
+2026-08-02,organic,Home,Desk Lamp,1,41.44,1
+2026-08-02,organic,Electronics,Smart Speaker,1,69.02,0
+2026-08-02,direct,Home,Throw Blanket,1,44,1
+2026-08-03,paid_search,Outdoor,Trail Backpack,1,87.26,0
+2026-08-03,organic,Home,Ceramic Mug Set,1,26.86,0
+2026-08-03,paid_search,Beauty,Body Lotion,1,26.18,0
+2026-08-03,organic,Outdoor,Camp Chair,2,109.24,0
+2026-08-03,email,Outdoor,Insulated Bottle,1,27.22,0
+2026-08-04,paid_social,Home,Ceramic Mug Set,1,29.58,0
+2026-08-04,email,Electronics,Wireless Earbuds,1,96.72,0
+2026-08-05,paid_social,Beauty,Matte Lipstick,1,20.59,0
+2026-08-05,paid_social,Outdoor,Trail Backpack,1,102.25,0
+2026-08-06,email,Beauty,Vitamin C Serum,1,32.3,0
+2026-08-06,email,Beauty,Matte Lipstick,1,17.29,1
+2026-08-06,organic,Home,Ceramic Mug Set,1,27.28,0
+2026-08-06,organic,Outdoor,Trail Backpack,1,88.55,1
+2026-08-07,email,Home,Ceramic Mug Set,3,82.88,0
+2026-08-07,organic,Electronics,Smart Speaker,1,64.09,0
+2026-08-07,organic,Home,Throw Blanket,1,44.49,0
+2026-08-07,direct,Outdoor,Insulated Bottle,1,27.65,0
+2026-08-07,direct,Beauty,Vitamin C Serum,1,34.8,0
+2026-08-07,paid_search,Outdoor,Camp Chair,1,61.22,0
+2026-08-07,paid_social,Outdoor,Insulated Bottle,1,25.77,0
+2026-08-08,paid_social,Beauty,Vitamin C Serum,3,96.01,0
+2026-08-08,paid_search,Outdoor,Insulated Bottle,1,26.07,1
+2026-08-08,organic,Beauty,Matte Lipstick,2,35.77,0
+2026-08-08,paid_social,Beauty,Vitamin C Serum,1,31.84,0
+2026-08-08,paid_search,Apparel,Wool Scarf,3,94.01,0
+2026-08-08,paid_social,Apparel,Classic Tee,1,23.87,0
+2026-08-09,direct,Electronics,Smart Speaker,1,63.53,1
+2026-08-09,email,Outdoor,Insulated Bottle,1,24.77,0
+2026-08-09,paid_social,Outdoor,Camp Chair,1,60.16,0
+2026-08-09,paid_social,Home,Throw Blanket,1,46.85,1
+2026-08-09,paid_search,Electronics,Wireless Earbuds,2,194.33,0
+2026-08-09,organic,Apparel,Wool Scarf,1,32.41,0
+2026-08-09,organic,Beauty,Matte Lipstick,1,20.47,0
+2026-08-10,paid_social,Beauty,Body Lotion,1,25.63,0
+2026-08-10,organic,Apparel,Denim Jacket,2,161.77,1
+2026-08-10,organic,Electronics,USB-C Hub,1,36.98,1
+2026-08-10,paid_search,Electronics,USB-C Hub,1,43.06,1
+2026-08-11,direct,Outdoor,Insulated Bottle,1,29.13,0
+2026-08-11,email,Home,Throw Blanket,1,45.08,0
+2026-08-11,paid_search,Electronics,USB-C Hub,2,75.38,0
+2026-08-11,paid_search,Apparel,Classic Tee,1,19.81,0
+2026-08-12,paid_search,Apparel,Classic Tee,2,41.23,1
+2026-08-12,paid_search,Outdoor,Trail Backpack,3,263.07,1
+2026-08-12,email,Outdoor,Insulated Bottle,1,26.22,0
+2026-08-12,paid_search,Electronics,USB-C Hub,2,84.71,0
+2026-08-13,paid_social,Beauty,Body Lotion,1,25.57,0
+2026-08-13,paid_search,Electronics,USB-C Hub,1,38.12,0
+2026-08-13,organic,Electronics,Smart Speaker,2,124.61,0
+2026-08-13,paid_social,Home,Ceramic Mug Set,1,28.72,0
+2026-08-13,paid_social,Home,Throw Blanket,1,46.35,0
+2026-08-13,paid_search,Home,Throw Blanket,1,50.45,0
+2026-08-13,organic,Electronics,Wireless Earbuds,1,90.66,0
+2026-08-14,email,Beauty,Vitamin C Serum,1,34.52,0
+2026-08-14,organic,Beauty,Matte Lipstick,1,20,0
+2026-08-14,paid_search,Beauty,Matte Lipstick,1,17.11,0
+2026-08-14,organic,Home,Throw Blanket,1,49.45,0
+2026-08-14,paid_search,Electronics,Wireless Earbuds,2,180.22,1
+2026-08-14,email,Home,Ceramic Mug Set,1,30.51,1
+2026-08-14,organic,Electronics,Wireless Earbuds,1,89.05,1
+2026-08-15,organic,Home,Ceramic Mug Set,1,26.7,0
+2026-08-15,paid_social,Home,Desk Lamp,2,78.04,0
+2026-08-15,paid_search,Beauty,Body Lotion,1,23.51,0
+2026-08-15,direct,Home,Throw Blanket,2,99.38,0
+2026-08-15,direct,Apparel,Denim Jacket,1,80.59,0
+2026-08-15,organic,Apparel,Wool Scarf,2,68.66,1
+2026-08-15,paid_search,Beauty,Body Lotion,1,25.6,0
+2026-08-15,email,Beauty,Vitamin C Serum,1,29.75,0
+2026-08-16,organic,Apparel,Wool Scarf,1,32.13,0
+2026-08-16,paid_social,Beauty,Vitamin C Serum,2,61.67,1
+2026-08-16,organic,Home,Ceramic Mug Set,1,28.2,1
+2026-08-16,paid_social,Electronics,USB-C Hub,2,88.74,1
+2026-08-16,organic,Outdoor,Insulated Bottle,1,27.06,0
+2026-08-16,paid_social,Outdoor,Trail Backpack,1,94.43,0
+2026-08-16,paid_social,Apparel,Denim Jacket,2,157,0
+2026-08-16,organic,Outdoor,Insulated Bottle,1,24.86,1
+2026-08-17,paid_social,Electronics,Wireless Earbuds,2,174.22,0
+2026-08-17,direct,Beauty,Body Lotion,2,51.54,0
+2026-08-17,organic,Apparel,Classic Tee,1,20.04,0
+2026-08-18,email,Beauty,Matte Lipstick,1,20.86,1
+2026-08-18,email,Apparel,Wool Scarf,1,33.91,0
+2026-08-19,organic,Home,Ceramic Mug Set,1,26.9,0
+2026-08-19,organic,Apparel,Denim Jacket,1,82.32,0
+2026-08-19,organic,Apparel,Wool Scarf,2,74.17,0
+2026-08-19,paid_search,Beauty,Vitamin C Serum,3,97.89,0
+2026-08-19,organic,Apparel,Wool Scarf,1,33.14,1
+2026-08-19,paid_social,Electronics,Wireless Earbuds,1,85.39,0
+2026-08-20,paid_search,Beauty,Vitamin C Serum,1,33.77,0
+2026-08-20,paid_search,Apparel,Denim Jacket,1,72.81,1
+2026-08-21,email,Electronics,Wireless Earbuds,1,94.09,0
+2026-08-21,organic,Beauty,Matte Lipstick,1,17.24,1
+2026-08-21,direct,Apparel,Denim Jacket,1,71.51,0
+2026-08-22,direct,Beauty,Matte Lipstick,2,41.66,0
+2026-08-22,paid_social,Electronics,Smart Speaker,2,125.24,0
+2026-08-22,organic,Apparel,Denim Jacket,1,82.73,1
+2026-08-22,email,Outdoor,Insulated Bottle,1,27.49,0
+2026-08-22,direct,Outdoor,Insulated Bottle,1,25.55,1
+2026-08-22,email,Home,Ceramic Mug Set,2,50.45,1
+2026-08-22,organic,Apparel,Classic Tee,1,23.4,0
+2026-08-22,paid_social,Beauty,Matte Lipstick,2,37.42,0
+2026-08-23,paid_social,Beauty,Vitamin C Serum,1,30.9,0
+2026-08-23,paid_social,Apparel,Wool Scarf,2,66.33,0
+2026-08-23,email,Beauty,Matte Lipstick,1,20.6,1
+2026-08-23,paid_social,Beauty,Body Lotion,2,44.78,0
+2026-08-23,email,Home,Ceramic Mug Set,2,60.55,1
+2026-08-23,paid_search,Outdoor,Insulated Bottle,1,24.97,1
+2026-08-23,organic,Apparel,Denim Jacket,1,72.37,0
+2026-08-24,direct,Outdoor,Camp Chair,1,57.29,0
+2026-08-24,organic,Electronics,Wireless Earbuds,2,162.59,0
+2026-08-24,organic,Beauty,Matte Lipstick,2,39.72,0
+2026-08-24,organic,Home,Throw Blanket,1,41.72,0
+2026-08-24,organic,Outdoor,Camp Chair,1,55.96,0
+2026-08-25,organic,Apparel,Wool Scarf,2,68.76,1
+2026-08-25,direct,Electronics,USB-C Hub,2,83.08,1
+2026-08-25,paid_search,Apparel,Denim Jacket,2,168.7,0
+2026-08-25,paid_search,Apparel,Wool Scarf,1,35.12,0
+2026-08-25,paid_search,Apparel,Classic Tee,1,20.18,0
+2026-08-25,organic,Beauty,Body Lotion,1,21.97,0
+2026-08-26,organic,Beauty,Vitamin C Serum,1,31.76,1
+2026-08-26,paid_search,Apparel,Denim Jacket,1,75.17,0
+2026-08-26,paid_search,Beauty,Body Lotion,1,21.81,0
+2026-08-26,organic,Home,Throw Blanket,1,46.96,0
+2026-08-26,paid_social,Home,Throw Blanket,1,45.77,1
+2026-08-26,organic,Home,Ceramic Mug Set,1,27.79,0
+2026-08-26,organic,Home,Desk Lamp,2,81.76,0
+2026-08-27,organic,Electronics,Wireless Earbuds,2,182.28,0
+2026-08-27,paid_search,Apparel,Denim Jacket,2,145.02,0
+2026-08-27,organic,Electronics,Wireless Earbuds,1,94.69,1
+2026-08-27,paid_search,Beauty,Matte Lipstick,2,34.96,1
+2026-08-27,email,Home,Desk Lamp,1,40.36,1
+2026-08-28,paid_social,Electronics,Smart Speaker,1,64.86,0
+2026-08-28,organic,Electronics,USB-C Hub,1,40.38,1
+2026-08-28,organic,Apparel,Wool Scarf,1,31.69,1

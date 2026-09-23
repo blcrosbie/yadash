@@ -1,0 +1,394 @@
+date,channel,campaign,spend,impressions,clicks,conversions,revenue
+2026-07-01,google_search,Brand - Search,209.27,13947,803,55,5477.27
+2026-07-01,google_search,Category - Search,126.01,8929,284,17,1631.56
+2026-07-01,meta,Retargeting - Stories,212.21,22042,424,17,1007.01
+2026-07-01,tiktok,Spark Ads - Launch,96.07,10812,254,6,410.15
+2026-07-01,email,Newsletter - Weekly,16.86,8297,208,12,1189.72
+2026-07-01,affiliate,Partner - Bloggers,50.41,6656,166,9,663.4
+2026-07-02,google_search,Brand - Search,191.74,12254,614,44,4013.05
+2026-07-02,google_search,Category - Search,208.52,17434,687,62,4363.35
+2026-07-02,meta,Prospecting - Feed,74.26,6789,62,3,201.42
+2026-07-02,meta,Retargeting - Stories,56.89,6580,127,3,256.98
+2026-07-02,tiktok,Spark Ads - Launch,74.74,8232,165,5,213.39
+2026-07-02,email,Newsletter - Weekly,19.59,6829,205,8,672.03
+2026-07-02,affiliate,Partner - Bloggers,89.69,11442,234,11,810.54
+2026-07-03,google_search,Brand - Search,209.97,18780,1071,55,3990.04
+2026-07-03,google_search,Category - Search,255.56,19254,748,57,4368.37
+2026-07-03,meta,Prospecting - Feed,201.89,22914,385,17,1564.56
+2026-07-03,meta,Retargeting - Stories,210.63,17427,268,9,622.44
+2026-07-03,tiktok,Spark Ads - Launch,111.55,13359,287,9,457.37
+2026-07-03,email,Newsletter - Weekly,25.65,11046,244,12,807.48
+2026-07-03,affiliate,Partner - Bloggers,26.49,4258,72,3,210.19
+2026-07-04,google_search,Brand - Search,197.39,14783,467,41,3413.21
+2026-07-04,google_search,Category - Search,209.07,15951,898,57,5383.54
+2026-07-04,meta,Prospecting - Feed,102.78,9965,158,3,191.36
+2026-07-04,meta,Retargeting - Stories,101.57,10680,181,5,352.73
+2026-07-04,tiktok,Spark Ads - Launch,119.84,17675,210,5,313.38
+2026-07-04,email,Newsletter - Weekly,21.39,6081,180,11,1066.96
+2026-07-04,affiliate,Partner - Bloggers,63.78,12204,347,19,1405.65
+2026-07-05,google_search,Brand - Search,182.25,18162,893,45,4922.83
+2026-07-05,google_search,Category - Search,161.05,13264,479,37,3423.87
+2026-07-05,meta,Prospecting - Feed,94.03,10755,120,4,311.03
+2026-07-05,meta,Retargeting - Stories,205.02,28293,352,7,640.28
+2026-07-05,email,Newsletter - Weekly,34.5,13488,499,21,1454.7
+2026-07-05,affiliate,Partner - Bloggers,85.64,20434,377,17,1106.87
+2026-07-06,google_search,Brand - Search,202.19,15778,485,30,2556.98
+2026-07-06,google_search,Category - Search,65.91,4752,166,9,792.28
+2026-07-06,meta,Prospecting - Feed,91.48,14691,228,5,425.36
+2026-07-06,meta,Retargeting - Stories,66.78,5773,57,2,175.65
+2026-07-06,tiktok,Spark Ads - Launch,94.2,12294,168,5,334.59
+2026-07-06,email,Newsletter - Weekly,32.86,13587,382,18,1422.39
+2026-07-06,affiliate,Partner - Bloggers,42.22,10203,224,7,481.5
+2026-07-07,google_search,Brand - Search,86.38,7560,243,16,1280.98
+2026-07-07,google_search,Category - Search,120.24,8155,450,24,1946.85
+2026-07-07,meta,Prospecting - Feed,92.22,9187,144,7,627.83
+2026-07-07,meta,Retargeting - Stories,121.2,18472,155,6,349.76
+2026-07-07,tiktok,Spark Ads - Launch,84.77,16096,267,9,586.67
+2026-07-07,email,Newsletter - Weekly,20.69,6739,215,10,926.12
+2026-07-07,affiliate,Partner - Bloggers,85,10272,275,9,616.13
+2026-07-08,google_search,Brand - Search,181.42,13103,533,42,3929.1
+2026-07-08,google_search,Category - Search,89.14,10419,547,45,3322.44
+2026-07-08,meta,Prospecting - Feed,57.75,6979,57,1,87.37
+2026-07-08,meta,Retargeting - Stories,103.68,13187,145,4,370.51
+2026-07-08,tiktok,Spark Ads - Launch,86.96,14466,233,5,255.22
+2026-07-08,email,Newsletter - Weekly,21.97,7772,222,12,972.07
+2026-07-08,affiliate,Partner - Bloggers,24.98,4126,100,3,181.1
+2026-07-09,google_search,Brand - Search,193.23,12696,746,45,4107.26
+2026-07-09,google_search,Category - Search,166.15,14904,762,40,4161.92
+2026-07-09,meta,Prospecting - Feed,186.72,29111,567,18,1671.78
+2026-07-09,meta,Retargeting - Stories,109.77,8466,116,2,117.71
+2026-07-09,tiktok,Spark Ads - Launch,93.04,17389,306,6,402.55
+2026-07-09,email,Newsletter - Weekly,19.09,5579,174,7,646.92
+2026-07-09,affiliate,Partner - Bloggers,67.51,8662,235,12,941.39
+2026-07-10,google_search,Brand - Search,222.96,16421,662,38,3495.24
+2026-07-10,google_search,Category - Search,238.63,20276,1076,79,5589.67
+2026-07-10,meta,Prospecting - Feed,127.21,10336,178,5,287.94
+2026-07-10,meta,Retargeting - Stories,148.31,12080,175,7,625.01
+2026-07-10,tiktok,Spark Ads - Launch,108.92,13951,216,8,328.18
+2026-07-10,email,Newsletter - Weekly,15.08,6211,218,13,1259.72
+2026-07-11,google_search,Brand - Search,255.46,30388,1204,84,9065.57
+2026-07-11,meta,Prospecting - Feed,50.73,5066,84,3,241.25
+2026-07-11,meta,Retargeting - Stories,178.52,14038,123,5,286.23
+2026-07-11,tiktok,Spark Ads - Launch,126.24,13358,234,4,195.63
+2026-07-11,email,Newsletter - Weekly,28.47,11403,255,12,879.45
+2026-07-11,affiliate,Partner - Bloggers,23.4,3244,83,3,221.85
+2026-07-12,google_search,Brand - Search,131.17,8330,253,16,1708.97
+2026-07-12,google_search,Category - Search,120.39,9631,346,20,2184.2
+2026-07-12,meta,Prospecting - Feed,81.74,12436,162,7,489.72
+2026-07-12,meta,Retargeting - Stories,218.38,20645,300,13,922.28
+2026-07-12,tiktok,Spark Ads - Launch,83.65,10628,121,2,95.33
+2026-07-12,email,Newsletter - Weekly,25.11,7073,179,10,726.6
+2026-07-12,affiliate,Partner - Bloggers,74.85,13023,255,10,707.75
+2026-07-13,google_search,Brand - Search,248,26980,1287,79,8268.26
+2026-07-13,google_search,Category - Search,204.89,12816,629,51,5164.73
+2026-07-13,meta,Retargeting - Stories,96.09,13021,153,6,518.18
+2026-07-13,tiktok,Spark Ads - Launch,80.58,8755,171,5,334.2
+2026-07-13,affiliate,Partner - Bloggers,65.21,7693,187,9,734.67
+2026-07-14,google_search,Brand - Search,99.35,6342,327,20,1426.47
+2026-07-14,meta,Prospecting - Feed,163.61,20228,297,7,659.91
+2026-07-14,meta,Retargeting - Stories,211.37,28602,322,11,948.23
+2026-07-14,tiktok,Spark Ads - Launch,102.13,12765,170,6,288.35
+2026-07-14,email,Newsletter - Weekly,34.19,8711,312,10,998.03
+2026-07-14,affiliate,Partner - Bloggers,70.54,14890,413,16,1389.82
+2026-07-15,google_search,Brand - Search,146.41,17201,1024,66,6706.68
+2026-07-15,meta,Prospecting - Feed,87.32,9287,135,4,256.03
+2026-07-15,meta,Retargeting - Stories,197.33,30140,469,11,642.01
+2026-07-15,tiktok,Spark Ads - Launch,92.58,17001,329,9,535.94
+2026-07-15,email,Newsletter - Weekly,26.22,12747,366,15,1399.89
+2026-07-15,affiliate,Partner - Bloggers,50.49,8995,211,7,429.3
+2026-07-16,google_search,Brand - Search,90.51,5942,280,22,2086.12
+2026-07-16,meta,Prospecting - Feed,211.52,21606,232,9,589.5
+2026-07-16,meta,Retargeting - Stories,186.45,28765,257,11,945.16
+2026-07-16,tiktok,Spark Ads - Launch,93.22,12259,290,9,579.76
+2026-07-16,affiliate,Partner - Bloggers,70.82,9101,240,14,923.9
+2026-07-17,google_search,Brand - Search,208.99,20810,809,43,3658.76
+2026-07-17,google_search,Category - Search,116.52,13870,766,64,4565.04
+2026-07-17,meta,Prospecting - Feed,160.94,13168,125,4,347.18
+2026-07-17,meta,Retargeting - Stories,121.06,12791,127,6,488.02
+2026-07-17,tiktok,Spark Ads - Launch,134.48,16601,353,7,388.46
+2026-07-17,email,Newsletter - Weekly,15.89,6338,250,12,830.64
+2026-07-17,affiliate,Partner - Bloggers,46.46,7078,142,6,532.86
+2026-07-18,google_search,Brand - Search,80.09,5581,174,13,995.19
+2026-07-18,google_search,Category - Search,178.79,12811,547,47,4887.87
+2026-07-18,meta,Prospecting - Feed,209.67,16589,294,6,413.91
+2026-07-18,meta,Retargeting - Stories,123.76,18994,341,10,754.18
+2026-07-18,tiktok,Spark Ads - Launch,94.02,9963,203,4,230.96
+2026-07-18,email,Newsletter - Weekly,16.17,5845,147,5,418
+2026-07-18,affiliate,Partner - Bloggers,50.77,5820,126,6,490.94
+2026-07-19,google_search,Brand - Search,182.29,15462,549,40,2887.18
+2026-07-19,google_search,Category - Search,196.74,13452,763,50,5211.74
+2026-07-19,meta,Prospecting - Feed,197.12,23380,261,9,520.98
+2026-07-19,meta,Retargeting - Stories,151.78,23024,195,9,672.14
+2026-07-19,tiktok,Spark Ads - Launch,94.86,10078,135,3,196.29
+2026-07-19,email,Newsletter - Weekly,20.39,8458,219,11,860.23
+2026-07-19,affiliate,Partner - Bloggers,27.28,3380,93,4,279.33
+2026-07-20,google_search,Brand - Search,204.47,14364,695,45,4365.73
+2026-07-20,google_search,Category - Search,86.76,8215,421,29,2681.57
+2026-07-20,meta,Retargeting - Stories,178.42,24511,330,14,956.45
+2026-07-20,tiktok,Spark Ads - Launch,119.58,12660,233,6,412.55
+2026-07-20,email,Newsletter - Weekly,23.67,7892,301,17,1549.61
+2026-07-20,affiliate,Partner - Bloggers,38.59,4963,88,4,358.22
+2026-07-21,google_search,Brand - Search,125.35,7941,423,38,3787.6
+2026-07-21,google_search,Category - Search,120.9,10492,406,36,3815.77
+2026-07-21,meta,Prospecting - Feed,93.14,7391,112,4,341.29
+2026-07-21,meta,Retargeting - Stories,72.74,9353,154,4,255.66
+2026-07-21,tiktok,Spark Ads - Launch,78.02,15482,181,4,250.5
+2026-07-21,affiliate,Partner - Bloggers,50.66,10589,188,8,635.23
+2026-07-22,google_search,Brand - Search,247.74,22275,754,54,5424.39
+2026-07-22,google_search,Category - Search,223.53,14596,860,69,6347.59
+2026-07-22,meta,Retargeting - Stories,102.27,9727,106,4,280.42
+2026-07-22,tiktok,Spark Ads - Launch,135.85,20693,219,5,335.52
+2026-07-22,email,Newsletter - Weekly,18.74,5917,127,6,463.39
+2026-07-22,affiliate,Partner - Bloggers,73.49,13244,203,8,584.04
+2026-07-23,google_search,Brand - Search,253.01,27742,1448,82,6177.91
+2026-07-23,google_search,Category - Search,241.36,17837,904,74,8121.77
+2026-07-23,meta,Prospecting - Feed,119.73,11377,143,4,338.34
+2026-07-23,meta,Retargeting - Stories,148.9,23919,240,12,1033.26
+2026-07-23,tiktok,Spark Ads - Launch,82.87,15182,310,11,659.19
+2026-07-23,email,Newsletter - Weekly,23.94,10359,224,7,578.14
+2026-07-23,affiliate,Partner - Bloggers,72.16,8351,243,14,1155.74
+2026-07-24,google_search,Brand - Search,86.42,7114,377,22,2288.72
+2026-07-24,google_search,Category - Search,132.8,9613,368,20,1915.39
+2026-07-24,meta,Prospecting - Feed,123.99,13714,245,9,630.4
+2026-07-24,meta,Retargeting - Stories,131.11,18225,244,8,592.65
+2026-07-24,tiktok,Spark Ads - Launch,73.56,8704,191,6,411.56
+2026-07-24,email,Newsletter - Weekly,23.33,11157,417,17,1384.1
+2026-07-24,affiliate,Partner - Bloggers,63.51,9808,205,9,745.04
+2026-07-25,google_search,Brand - Search,230.17,14645,858,53,4740.31
+2026-07-25,google_search,Category - Search,225.49,15554,845,54,4299.8
+2026-07-25,meta,Prospecting - Feed,190.71,18301,336,7,500.19
+2026-07-25,meta,Retargeting - Stories,214.28,23322,268,13,1112.03
+2026-07-25,tiktok,Spark Ads - Launch,64.2,9260,126,3,132.78
+2026-07-25,email,Newsletter - Weekly,30.32,9602,290,14,1327.22
+2026-07-25,affiliate,Partner - Bloggers,30.91,4134,100,3,214.94
+2026-07-26,google_search,Brand - Search,249.61,26749,1301,87,8836.33
+2026-07-26,google_search,Category - Search,217.58,25825,1014,73,6102.3
+2026-07-26,meta,Prospecting - Feed,55.22,8591,122,5,315.34
+2026-07-26,meta,Retargeting - Stories,66.28,7306,84,2,115.35
+2026-07-26,tiktok,Spark Ads - Launch,103.08,15951,169,3,171.78
+2026-07-26,email,Newsletter - Weekly,20.07,7597,243,13,940.88
+2026-07-26,affiliate,Partner - Bloggers,29.19,4448,102,3,225.05
+2026-07-27,google_search,Brand - Search,147.16,13408,742,41,3651
+2026-07-27,google_search,Category - Search,219.38,26921,1336,94,7177.45
+2026-07-27,meta,Prospecting - Feed,97.76,7998,108,4,344.07
+2026-07-27,meta,Retargeting - Stories,102.39,13695,185,5,442.84
+2026-07-27,tiktok,Spark Ads - Launch,58.13,7182,160,5,321.15
+2026-07-27,email,Newsletter - Weekly,20.55,9037,313,14,1276.18
+2026-07-27,affiliate,Partner - Bloggers,87.75,20203,579,32,1960.87
+2026-07-28,google_search,Brand - Search,195.62,20811,627,48,4436.87
+2026-07-28,google_search,Category - Search,258.77,20754,1164,69,5957.61
+2026-07-28,meta,Prospecting - Feed,135.78,21695,264,11,607.81
+2026-07-28,meta,Retargeting - Stories,60.22,6883,113,6,448.52
+2026-07-28,tiktok,Spark Ads - Launch,47.75,5386,95,3,167.48
+2026-07-28,email,Newsletter - Weekly,28.98,8353,292,13,1129.82
+2026-07-28,affiliate,Partner - Bloggers,64.72,12544,298,10,826.09
+2026-07-29,google_search,Brand - Search,67.82,7268,325,29,2293.81
+2026-07-29,google_search,Category - Search,246.88,22697,1261,72,7405.35
+2026-07-29,meta,Prospecting - Feed,143.27,16582,308,14,903.82
+2026-07-29,meta,Retargeting - Stories,147.94,15778,300,14,1122.66
+2026-07-29,tiktok,Spark Ads - Launch,110.41,11359,116,2,80.35
+2026-07-29,email,Newsletter - Weekly,27.28,10721,379,20,1663.97
+2026-07-29,affiliate,Partner - Bloggers,30.49,6940,197,6,459.44
+2026-07-30,google_search,Brand - Search,259.16,31450,1076,89,8123.83
+2026-07-30,google_search,Category - Search,93.35,7289,381,20,2014.59
+2026-07-30,meta,Prospecting - Feed,151.44,15350,165,6,345.65
+2026-07-30,meta,Retargeting - Stories,164.72,18126,244,10,756.32
+2026-07-30,tiktok,Spark Ads - Launch,120.03,12168,182,5,256.8
+2026-07-30,email,Newsletter - Weekly,33.98,10176,210,10,665.75
+2026-07-30,affiliate,Partner - Bloggers,81.66,12952,197,7,587.63
+2026-07-31,google_search,Brand - Search,136.78,15412,758,54,5626.9
+2026-07-31,google_search,Category - Search,228.76,25624,1147,94,10168.5
+2026-07-31,meta,Prospecting - Feed,71.5,9285,170,4,315.24
+2026-07-31,meta,Retargeting - Stories,62.15,5228,99,4,277.82
+2026-07-31,tiktok,Spark Ads - Launch,66.92,7514,76,2,137.55
+2026-07-31,email,Newsletter - Weekly,27.65,9873,255,13,1169.23
+2026-07-31,affiliate,Partner - Bloggers,48.97,6869,188,8,518.69
+2026-08-01,google_search,Brand - Search,103.75,9961,381,29,2548.87
+2026-08-01,google_search,Category - Search,70.17,8467,366,20,1832.47
+2026-08-01,meta,Prospecting - Feed,195.59,15156,214,8,480
+2026-08-01,meta,Retargeting - Stories,91.22,7753,110,4,288.46
+2026-08-01,tiktok,Spark Ads - Launch,93.23,12903,291,7,386.89
+2026-08-01,email,Newsletter - Weekly,17.83,5904,191,8,592.38
+2026-08-01,affiliate,Partner - Bloggers,46.74,10890,221,8,713.02
+2026-08-02,google_search,Brand - Search,77.37,8265,304,18,1485.85
+2026-08-02,google_search,Category - Search,209.2,21394,1032,58,5917
+2026-08-02,meta,Prospecting - Feed,142.07,20301,243,7,571.82
+2026-08-02,meta,Retargeting - Stories,194.38,17110,326,9,689
+2026-08-02,tiktok,Spark Ads - Launch,61.33,9281,124,4,183.52
+2026-08-02,email,Newsletter - Weekly,34.27,9501,380,21,1793.68
+2026-08-02,affiliate,Partner - Bloggers,62.13,10054,260,13,1145.37
+2026-08-03,google_search,Brand - Search,184.03,22583,959,84,6629.58
+2026-08-03,google_search,Category - Search,137.34,8727,446,34,2417.68
+2026-08-03,meta,Prospecting - Feed,76.95,6961,115,5,429.98
+2026-08-03,meta,Retargeting - Stories,129,11797,137,3,166.85
+2026-08-03,tiktok,Spark Ads - Launch,35.89,6169,109,3,146.69
+2026-08-03,email,Newsletter - Weekly,22.18,9768,258,15,1369.64
+2026-08-04,google_search,Brand - Search,72.3,4660,215,19,2082.37
+2026-08-04,google_search,Category - Search,203.72,19567,1070,66,5041.48
+2026-08-04,meta,Prospecting - Feed,187.13,30097,379,15,1217.24
+2026-08-04,meta,Retargeting - Stories,79.04,11092,134,5,363.51
+2026-08-04,tiktok,Spark Ads - Launch,110.52,12307,246,5,220.94
+2026-08-04,email,Newsletter - Weekly,28.06,8045,266,13,1051.72
+2026-08-04,affiliate,Partner - Bloggers,65,15502,394,20,1397.86
+2026-08-05,google_search,Category - Search,153.24,11549,466,37,3820.52
+2026-08-05,meta,Prospecting - Feed,170.79,21912,413,11,735.28
+2026-08-05,meta,Retargeting - Stories,187.22,18083,265,11,717.25
+2026-08-05,tiktok,Spark Ads - Launch,101.02,13334,185,5,297.62
+2026-08-05,email,Newsletter - Weekly,15.5,4900,121,5,325.09
+2026-08-05,affiliate,Partner - Bloggers,27.43,6569,171,6,396.02
+2026-08-06,google_search,Brand - Search,65.42,5963,235,14,1104.27
+2026-08-06,google_search,Category - Search,162.29,13183,654,47,3637.27
+2026-08-06,meta,Prospecting - Feed,83.14,12171,197,5,290.76
+2026-08-06,tiktok,Spark Ads - Launch,94,10880,208,5,229.36
+2026-08-06,email,Newsletter - Weekly,24.04,7998,172,7,464.53
+2026-08-06,affiliate,Partner - Bloggers,87.47,11103,270,10,714.32
+2026-08-07,google_search,Brand - Search,156.54,12532,447,34,2451.3
+2026-08-07,google_search,Category - Search,164.74,16130,573,42,3717.56
+2026-08-07,meta,Prospecting - Feed,150.7,12666,116,5,276.18
+2026-08-07,meta,Retargeting - Stories,113.62,12194,105,5,362.51
+2026-08-07,tiktok,Spark Ads - Launch,87.16,13877,185,6,355.81
+2026-08-07,email,Newsletter - Weekly,28.91,8712,262,14,1277.13
+2026-08-07,affiliate,Partner - Bloggers,36.26,5036,131,7,554.25
+2026-08-08,google_search,Brand - Search,129.78,11383,479,25,2385.04
+2026-08-08,google_search,Category - Search,252.54,17158,971,62,5066.96
+2026-08-08,meta,Prospecting - Feed,75.38,6290,80,4,258.35
+2026-08-08,meta,Retargeting - Stories,201.18,19776,353,9,736.78
+2026-08-08,tiktok,Spark Ads - Launch,112.26,20061,393,12,555.62
+2026-08-08,email,Newsletter - Weekly,18.53,5149,111,4,388.49
+2026-08-08,affiliate,Partner - Bloggers,39.5,4665,73,4,306.76
+2026-08-09,google_search,Brand - Search,158.68,12034,644,57,5775.91
+2026-08-09,google_search,Category - Search,171.24,19753,719,63,6452.5
+2026-08-09,meta,Prospecting - Feed,95.24,15522,144,6,384.34
+2026-08-09,meta,Retargeting - Stories,144.84,12112,200,8,727.38
+2026-08-09,tiktok,Spark Ads - Launch,121.4,14159,339,7,280.64
+2026-08-09,email,Newsletter - Weekly,22.81,6814,172,6,393.01
+2026-08-09,affiliate,Partner - Bloggers,39.21,4828,125,6,398
+2026-08-10,google_search,Brand - Search,133.92,9539,376,23,2134.91
+2026-08-10,google_search,Category - Search,144.43,15919,643,40,3548.77
+2026-08-10,meta,Prospecting - Feed,170.67,13781,122,3,179.83
+2026-08-10,meta,Retargeting - Stories,115.34,14507,139,4,293.78
+2026-08-10,tiktok,Spark Ads - Launch,37.49,6703,162,5,295.97
+2026-08-10,email,Newsletter - Weekly,26.43,6776,141,5,459.77
+2026-08-10,affiliate,Partner - Bloggers,42.75,5323,158,7,531.64
+2026-08-11,google_search,Brand - Search,155.82,13890,804,57,4016.1
+2026-08-11,google_search,Category - Search,259.7,23716,1309,68,5902.95
+2026-08-11,meta,Prospecting - Feed,122.24,11153,170,5,343.33
+2026-08-11,meta,Retargeting - Stories,131.17,14957,280,11,662.16
+2026-08-11,tiktok,Spark Ads - Launch,56.83,7223,152,2,116.41
+2026-08-11,email,Newsletter - Weekly,23.76,7818,264,8,723.5
+2026-08-11,affiliate,Partner - Bloggers,58.85,12463,245,8,715.97
+2026-08-12,google_search,Category - Search,98.97,8554,452,39,3964.02
+2026-08-12,meta,Retargeting - Stories,135.25,22234,249,9,740.99
+2026-08-12,tiktok,Spark Ads - Launch,67.97,9278,162,3,196.8
+2026-08-12,affiliate,Partner - Bloggers,48.1,6378,142,6,397.25
+2026-08-13,google_search,Brand - Search,99.67,7820,401,29,2918.25
+2026-08-13,google_search,Category - Search,132.24,8769,267,18,1571.8
+2026-08-13,meta,Prospecting - Feed,167.45,17090,235,6,422.39
+2026-08-13,meta,Retargeting - Stories,50.95,5906,82,4,330.06
+2026-08-13,tiktok,Spark Ads - Launch,81.92,12181,268,7,390.51
+2026-08-13,email,Newsletter - Weekly,19.25,5852,217,11,798.32
+2026-08-13,affiliate,Partner - Bloggers,78.5,11720,342,17,1251.41
+2026-08-14,google_search,Brand - Search,192.24,23917,1279,86,6940.17
+2026-08-14,google_search,Category - Search,78.5,7400,290,26,2170.74
+2026-08-14,meta,Prospecting - Feed,124.73,9910,107,3,279.82
+2026-08-14,meta,Retargeting - Stories,130.82,18408,161,6,435.53
+2026-08-14,tiktok,Spark Ads - Launch,67.68,12637,280,9,454.18
+2026-08-14,email,Newsletter - Weekly,23.03,5843,121,7,493.22
+2026-08-14,affiliate,Partner - Bloggers,43.76,6371,181,9,680.8
+2026-08-15,google_search,Brand - Search,134.74,11706,458,35,3044.56
+2026-08-15,google_search,Category - Search,61.96,5465,314,19,1521.91
+2026-08-15,meta,Prospecting - Feed,184.52,17171,238,6,567.03
+2026-08-15,meta,Retargeting - Stories,67.13,5504,80,2,161.82
+2026-08-15,tiktok,Spark Ads - Launch,76.7,9052,102,2,85.58
+2026-08-15,email,Newsletter - Weekly,31.4,9743,371,16,1535.51
+2026-08-15,affiliate,Partner - Bloggers,61.44,8728,169,10,673.96
+2026-08-16,google_search,Brand - Search,105.84,8391,408,27,2352.32
+2026-08-16,google_search,Category - Search,82.97,10266,391,33,3215.99
+2026-08-16,meta,Prospecting - Feed,157.38,19168,338,9,581.01
+2026-08-16,meta,Retargeting - Stories,161.56,20690,205,6,517.44
+2026-08-16,tiktok,Spark Ads - Launch,81.25,8624,195,3,148.44
+2026-08-16,affiliate,Partner - Bloggers,40.95,5329,143,8,627.55
+2026-08-17,google_search,Brand - Search,232.78,19337,862,61,5578.87
+2026-08-17,google_search,Category - Search,234.54,17363,1031,55,4505.55
+2026-08-17,meta,Prospecting - Feed,57.7,7936,155,4,368.71
+2026-08-17,meta,Retargeting - Stories,209.28,19592,325,14,1183.08
+2026-08-17,tiktok,Spark Ads - Launch,31.19,5147,104,2,121.57
+2026-08-17,affiliate,Partner - Bloggers,34.92,5660,151,8,617.93
+2026-08-18,google_search,Category - Search,144.72,9068,354,19,1987.17
+2026-08-18,meta,Prospecting - Feed,168.47,24889,256,5,460.77
+2026-08-18,meta,Retargeting - Stories,52.42,4692,70,2,138.11
+2026-08-18,tiktok,Spark Ads - Launch,72.67,7330,118,2,84.83
+2026-08-18,email,Newsletter - Weekly,34.55,11909,288,16,1493.89
+2026-08-18,affiliate,Partner - Bloggers,67.21,10181,221,8,556.39
+2026-08-19,google_search,Brand - Search,221.7,18676,999,75,6085.07
+2026-08-19,meta,Prospecting - Feed,185.49,16201,201,7,522.44
+2026-08-19,meta,Retargeting - Stories,155.82,22062,208,10,768.8
+2026-08-19,tiktok,Spark Ads - Launch,48.24,8505,86,2,113.65
+2026-08-19,email,Newsletter - Weekly,17.99,7980,216,8,665.71
+2026-08-20,google_search,Brand - Search,160.24,17167,833,50,5438.67
+2026-08-20,google_search,Category - Search,104.94,7696,444,38,3770.72
+2026-08-20,meta,Prospecting - Feed,104.09,14585,232,11,934.23
+2026-08-20,meta,Retargeting - Stories,97.51,7516,67,3,263.16
+2026-08-20,tiktok,Spark Ads - Launch,131.87,18020,272,9,532.83
+2026-08-20,email,Newsletter - Weekly,22.56,6928,243,9,835.47
+2026-08-20,affiliate,Partner - Bloggers,50.14,8238,233,8,485.59
+2026-08-21,google_search,Brand - Search,138.67,12361,685,52,4474.08
+2026-08-21,google_search,Category - Search,94.56,9517,520,31,3020.7
+2026-08-21,meta,Prospecting - Feed,64.9,5058,54,2,112.52
+2026-08-21,meta,Retargeting - Stories,123.83,12869,223,6,337.17
+2026-08-21,tiktok,Spark Ads - Launch,101.16,17988,368,8,527.2
+2026-08-21,email,Newsletter - Weekly,31.64,8982,189,7,463.99
+2026-08-21,affiliate,Partner - Bloggers,38.08,8474,149,7,593.29
+2026-08-22,google_search,Brand - Search,165.77,12040,626,48,5208.96
+2026-08-22,google_search,Category - Search,166.48,11653,532,32,2753.02
+2026-08-22,meta,Prospecting - Feed,84.44,8842,125,6,528.92
+2026-08-22,meta,Retargeting - Stories,51.1,5364,71,3,205.2
+2026-08-22,tiktok,Spark Ads - Launch,50.27,6281,142,3,172.7
+2026-08-22,email,Newsletter - Weekly,30.79,10192,259,10,844.99
+2026-08-22,affiliate,Partner - Bloggers,22.94,4000,106,5,419.94
+2026-08-23,google_search,Brand - Search,83.72,9966,380,22,1805.82
+2026-08-23,google_search,Category - Search,109.94,10603,480,25,2446.76
+2026-08-23,meta,Prospecting - Feed,155.1,22978,343,17,1351.92
+2026-08-23,meta,Retargeting - Stories,58.65,4914,70,2,157.75
+2026-08-23,tiktok,Spark Ads - Launch,98.91,11114,163,3,141.92
+2026-08-23,email,Newsletter - Weekly,29.94,12758,294,11,1031.45
+2026-08-23,affiliate,Partner - Bloggers,70.42,8196,209,10,880
+2026-08-24,google_search,Brand - Search,133.9,16648,724,57,5951.2
+2026-08-24,google_search,Category - Search,101.64,7137,227,13,1135.14
+2026-08-24,meta,Prospecting - Feed,206.28,21618,262,6,408.71
+2026-08-24,meta,Retargeting - Stories,54.99,6460,94,4,344.43
+2026-08-24,tiktok,Spark Ads - Launch,45.96,6522,136,2,94.18
+2026-08-24,email,Newsletter - Weekly,34.85,12176,348,12,901.15
+2026-08-24,affiliate,Partner - Bloggers,87.54,15292,305,17,1502.88
+2026-08-25,google_search,Brand - Search,180.07,17590,556,36,3620.67
+2026-08-25,google_search,Category - Search,185.18,13486,764,52,4823.79
+2026-08-25,meta,Prospecting - Feed,209.46,29657,318,13,720.56
+2026-08-25,meta,Retargeting - Stories,197.27,24417,457,12,1025.83
+2026-08-25,tiktok,Spark Ads - Launch,49.18,6663,115,2,89.22
+2026-08-25,email,Newsletter - Weekly,27.39,7205,280,10,943.43
+2026-08-26,google_search,Brand - Search,170.85,11464,526,37,3625.03
+2026-08-26,google_search,Category - Search,136.41,9151,426,31,2912.66
+2026-08-26,meta,Prospecting - Feed,120.65,16188,231,7,513.79
+2026-08-26,meta,Retargeting - Stories,217.56,19794,347,16,901
+2026-08-26,tiktok,Spark Ads - Launch,138.65,16407,257,8,427.97
+2026-08-26,email,Newsletter - Weekly,20.63,6834,267,10,694.31
+2026-08-26,affiliate,Partner - Bloggers,28.45,3816,110,5,332.15
+2026-08-27,google_search,Brand - Search,203.61,17285,899,77,6601.64
+2026-08-27,google_search,Category - Search,218.96,16677,660,40,3495.87
+2026-08-27,meta,Prospecting - Feed,144,14432,166,4,313.62
+2026-08-27,meta,Retargeting - Stories,211.8,31696,624,29,2583.81
+2026-08-27,tiktok,Spark Ads - Launch,121.54,12934,217,4,230.33
+2026-08-27,email,Newsletter - Weekly,25.87,11916,390,22,1809.48
+2026-08-27,affiliate,Partner - Bloggers,88.41,11679,176,9,748.34
+2026-08-28,google_search,Brand - Search,222.06,21710,716,45,3958.32
+2026-08-28,meta,Prospecting - Feed,108.98,9114,74,3,244.68
+2026-08-28,meta,Retargeting - Stories,109.59,8844,140,7,583.05
+2026-08-28,tiktok,Spark Ads - Launch,39.6,4386,54,1,62.71
+2026-08-28,email,Newsletter - Weekly,33.28,16022,510,18,1734.14
+2026-08-28,affiliate,Partner - Bloggers,62.24,8894,185,10,869.6
+2026-08-29,google_search,Brand - Search,76.66,6145,316,23,1857.57
+2026-08-29,meta,Prospecting - Feed,95.72,7908,93,5,292.17
+2026-08-29,meta,Retargeting - Stories,160.39,14048,258,10,941.91
+2026-08-29,tiktok,Spark Ads - Launch,137.81,26476,588,12,518.75
+2026-08-29,email,Newsletter - Weekly,17.13,6275,245,13,1004.61
+2026-08-29,affiliate,Partner - Bloggers,41.59,9846,257,10,751.41

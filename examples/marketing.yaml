@@ -1,0 +1,208 @@
+# yaml-language-server: $schema=../schema/dashboard.schema.json
+version: 1
+
+dashboard:
+  id: marketing-performance
+  title: Marketing Campaign Performance
+  description: Spend, conversion efficiency and return by channel and campaign.
+  theme: auto
+
+  data:
+    campaigns:
+      type: csv
+      path: ./data/campaigns.csv
+      date_fields: [date]
+
+  metrics:
+    spend:
+      agg: sum
+      field: spend
+      label: Spend
+      format: currency
+    conversions:
+      agg: sum
+      field: conversions
+      label: Conversions
+    revenue:
+      agg: sum
+      field: revenue
+      label: Revenue
+      format: currency
+    clicks:
+      agg: sum
+      field: clicks
+      label: Clicks
+    ctr:
+      agg: ratio
+      field: clicks
+      of: impressions
+      label: Click-through rate
+      format: percent
+    conversion_rate:
+      agg: ratio
+      field: conversions
+      of: clicks
+      label: Conversion rate
+      format: percent
+    roas:
+      agg: ratio
+      field: revenue
+      of: spend
+      label: ROAS
+      decimals: 2
+    cac:
+      agg: ratio
+      field: spend
+      of: conversions
+      label: CAC
+      format: currency
+
+  filters:
+    - field: date
+      type: date_range
+      label: Date range
+    - field: channel
+      type: multiselect
+      label: Channel
+    - field: campaign
+      label: Campaign
+
+  layout:
+    columns: 12
+    gap: 16
+    row_height: 64
+
+  widgets:
+    - id: kpi_spend
+      type: kpi
+      title: Spend
+      metric: spend
+      compare: previous_period
+      position: [1, 1]
+      size: [3, 2]
+
+    - id: kpi_conversions
+      type: kpi
+      title: Conversions
+      metric: conversions
+      compare: previous_period
+      position: [4, 1]
+      size: [3, 2]
+
+    - id: kpi_roas
+      type: kpi
+      title: ROAS
+      metric: roas
+      target: 3
+      thresholds:
+        - below: 2
+          state: bad
+          label: Underwater
+        - above: 3
+          state: good
+          label: Efficient
+      position: [7, 1]
+      size: [3, 2]
+
+    - id: kpi_cac
+      type: kpi
+      title: CAC
+      metric: cac
+      thresholds:
+        - above: 80
+          state: warn
+          label: Watch
+      position: [10, 1]
+      size: [3, 2]
+
+    - id: spend_trend
+      type: stacked_bar
+      title: Spend by channel, by week
+      x:
+        field: date
+        bucket: week
+      y:
+        metric: spend
+      series:
+        field: channel
+      show_legend: true
+      position: [1, 3]
+      size: [8, 5]
+
+    - id: channel_mix
+      type: donut
+      title: Conversions by channel
+      dimension:
+        field: channel
+      metric: conversions
+      position: [9, 3]
+      size: [4, 5]
+
+    - id: efficiency
+      type: scatter
+      title: Spend vs revenue by campaign
+      x:
+        metric: spend
+        format: currency
+      y:
+        metric: revenue
+        format: currency
+      series:
+        field: campaign
+      position: [1, 8]
+      size: [6, 5]
+
+    - id: top_campaigns
+      type: hbar
+      title: Conversions by campaign
+      dimension:
+        field: campaign
+        limit: 8
+      metric: conversions
+      show_labels: true
+      position: [7, 8]
+      size: [6, 5]
+
+    - id: campaign_table
+      type: table
+      title: Campaign detail
+      dimensions:
+        - field: channel
+        - field: campaign
+      metrics: [spend, clicks, conversions, ctr, conversion_rate, roas]
+      columns:
+        - key: channel
+          label: Channel
+        - key: campaign
+          label: Campaign
+        - key: spend
+          label: Spend
+        - key: ctr
+          label: CTR
+        - key: conversion_rate
+          label: CVR
+        - key: roas
+          label: ROAS
+          thresholds:
+            - below: 2
+              state: bad
+            - above: 3
+              state: good
+      sort:
+        by: spend
+        direction: desc
+      position: [1, 13]
+      size: [12, 6]
+
+    - id: notes
+      type: markdown
+      title: How to read this
+      text: |
+        **ROAS** is revenue / spend for the rows in view — filter to one
+        channel or campaign and it recomputes, it is never a pre-divided
+        column pulled from yesterday's export.
+
+        `CAC` is spend / conversions; a low-conversion campaign can look
+        cheap on spend alone and expensive here, which is the point.
+      position: [1, 19]
+      size: [12, 2]
