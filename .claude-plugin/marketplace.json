@@ -9,7 +9,7 @@
       "name": "yadash",
       "source": "./",
       "description": "Dashboards as YAML: build, edit, audit and deploy dashboards that compile to a single static HTML page.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "category": "data",
       "keywords": ["dashboard", "analytics", "bi", "yaml", "charts"]
     }

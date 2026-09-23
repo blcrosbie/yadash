@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "yadash",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dashboards as YAML. Describe a dashboard in one file, compile it to a static page, deploy it anywhere - and let the agent maintain the config instead of your JSX.",
   "author": {
     "name": "Brandon Crosbie"
