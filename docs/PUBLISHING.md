@@ -14,19 +14,31 @@ one-time code for publishes on this account, and it wasn't practical to relay
 that OTP through this chat in time before it expired. Finish it from your own
 terminal:
 
-```bash
+On PowerShell, run each line separately — `&&` is a bash/zsh operator and
+PowerShell 5.1 doesn't support it:
+
+```powershell
 cd C:\Users\bcros\dev\blcrosbie\yadash
-npm test && npm run validate:examples   # already green as of this writing
+npm test                                # already green as of this writing
+npm run validate:examples               # already green as of this writing
 npm publish --access public             # npm will prompt for your OTP interactively
+npx yadash@latest init smoke
+npx yadash@latest build smoke.yaml -o C:\Users\bcros\AppData\Local\Temp\smoke
+```
+
+On bash/zsh, the chained form works fine:
+
+```bash
+npm test && npm run validate:examples && npm publish --access public
 npx yadash@latest init smoke && npx yadash@latest build smoke.yaml -o /tmp/smoke
 ```
 
 That last line is the real test: it proves `npx` works for a stranger with an
-empty cache. Once it's published, come back to Claude (or just run the two
-commands below yourself) to finish tagging the release:
+empty cache. Once it's published, finish tagging the release:
 
-```bash
-git tag v0.1.0 && git push --tags
+```powershell
+git tag v0.1.0
+git push --tags
 ```
 
 Then draw a GitHub Release from that tag using `CHANGELOG.md`'s `0.1.0` notes.
