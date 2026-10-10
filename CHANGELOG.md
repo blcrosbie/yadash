@@ -17,6 +17,18 @@ here explicitly.
   complete example dashboards with generated synthetic data
   (`scripts/generate-example-data.mjs`), plus a sample-prompts section in the
   README.
+- **Filters apply on a button, not on every change.** The filter bar now has
+  an **Apply** button (enabled only when something changed) next to Reset, so
+  a reader can set several filters and get one redraw. A search filter also
+  applies on Enter. Behavior change from 0.1.0, where each change redrew at once.
+- **`multiselect` is a checkbox dropdown** with All / Clear, replacing the
+  native `<select multiple>` that rendered as a cramped one-row listbox and
+  needed Ctrl-click.
+- **Fix: axis names overlapped the legend and were clipped.** A y-axis
+  `label` on a chart with a legend now gets its own line under the legend; the
+  y name starts at the axis instead of centering past the plot's left edge;
+  the x name sits centered under the axis labels; the first and last x labels
+  on line/area charts stay inside the plot.
 
 ## 0.1.0 — 2026-09-23
 

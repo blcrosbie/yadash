@@ -18,7 +18,8 @@
   var state = {
     data: {},          // source name -> rows
     errors: {},        // source name -> message
-    filters: {},       // filter id -> value
+    filters: {},       // filter id -> value (applied)
+    pending: {},       // filter id -> value (edited, not yet applied)
     charts: [],        // { widget, instance, el }
     booted: false,
   };
@@ -330,7 +331,80 @@
     renderAll();
   }
 
+  // Filter edits collect in state.pending and only take effect on Apply, so a
+  // reader can change several filters and see one coherent redraw.
+  function cloneFilters(f) { return JSON.parse(JSON.stringify(f || {})); }
+
+  function pendingChanged() {
+    return JSON.stringify(state.pending) !== JSON.stringify(state.filters);
+  }
+
+  function syncApply() {
+    var btn = document.querySelector('.yd-apply');
+    if (btn) btn.disabled = !pendingChanged();
+  }
+
+  function setPending(id, value) {
+    state.pending[id] = value;
+    syncApply();
+  }
+
+  function applyFilters() {
+    state.filters = cloneFilters(state.pending);
+    syncApply();
+    onFilterChange();
+  }
+
+  function buildMultiselect(f, options) {
+    var box = el('details', 'yd-multi');
+    var summary = el('summary');
+    var panel = el('div', 'yd-multi-panel');
+    function chosen() { return Array.isArray(state.pending[f.id]) ? state.pending[f.id] : []; }
+    function label() {
+      var n = chosen().length;
+      summary.textContent = n === 0 ? 'All' : n === 1 ? chosen()[0] : n + ' selected';
+    }
+    var checks = [];
+    var quick = el('div', 'yd-multi-quick');
+    var allBtn = el('button', null, 'All');
+    var noneBtn = el('button', null, 'Clear');
+    allBtn.type = noneBtn.type = 'button';
+    allBtn.addEventListener('click', function () {
+      checks.forEach(function (c) { c.checked = true; });
+      setPending(f.id, options.map(String)); label();
+    });
+    noneBtn.addEventListener('click', function () {
+      checks.forEach(function (c) { c.checked = false; });
+      setPending(f.id, []); label();
+    });
+    quick.appendChild(allBtn);
+    quick.appendChild(noneBtn);
+    panel.appendChild(quick);
+    options.forEach(function (opt) {
+      var row = el('label', 'yd-multi-opt');
+      var cb = el('input');
+      cb.type = 'checkbox';
+      cb.value = String(opt);
+      cb.checked = chosen().indexOf(cb.value) !== -1;
+      cb.addEventListener('change', function () {
+        setPending(f.id, checks.filter(function (c) { return c.checked; }).map(function (c) { return c.value; }));
+        label();
+      });
+      checks.push(cb);
+      row.appendChild(cb);
+      row.appendChild(document.createTextNode(String(opt)));
+      panel.appendChild(row);
+    });
+    label();
+    box.appendChild(summary);
+    box.appendChild(panel);
+    // Close when clicking elsewhere, like a native dropdown.
+    document.addEventListener('click', function (e) { if (!box.contains(e.target)) box.open = false; });
+    return box;
+  }
+
   function buildFilterBar() {
+    state.pending = cloneFilters(state.filters);
     var bar = el('div', 'yd-filters');
     (spec.filters || []).forEach(function (f) {
       var wrap = el('div', 'yd-filter');
@@ -341,12 +415,11 @@
         var to = el('input');
         from.type = 'date';
         to.type = 'date';
-        var cur = state.filters[f.id] || {};
+        var cur = state.pending[f.id] || {};
         from.value = cur.from || '';
         to.value = cur.to || '';
         function onDate() {
-          state.filters[f.id] = { from: from.value || null, to: to.value || null };
-          onFilterChange();
+          setPending(f.id, { from: from.value || null, to: to.value || null });
         }
         from.addEventListener('change', onDate);
         to.addEventListener('change', onDate);
@@ -357,45 +430,36 @@
         var input = el('input');
         input.type = 'search';
         input.placeholder = 'Search ' + (f.label || f.field);
-        input.value = state.filters[f.id] || '';
-        input.addEventListener('input', debounce(function () {
-          state.filters[f.id] = input.value;
-          onFilterChange();
-        }, 200));
+        input.value = state.pending[f.id] || '';
+        input.addEventListener('input', function () { setPending(f.id, input.value); });
+        input.addEventListener('keydown', function (e) { if (e.key === 'Enter') applyFilters(); });
         wrap.appendChild(input);
+      } else if (f.type === 'multiselect') {
+        wrap.appendChild(buildMultiselect(f, f.options || derivedOptions(f)));
       } else {
         var select = el('select');
-        select.multiple = f.type === 'multiselect';
-        if (f.type === 'multiselect') select.size = 1;
         var options = f.options || derivedOptions(f);
-        if (f.type !== 'multiselect') {
-          var all = el('option', null, 'All');
-          all.value = '__all__';
-          select.appendChild(all);
-        }
+        var all = el('option', null, 'All');
+        all.value = '__all__';
+        select.appendChild(all);
         options.forEach(function (opt) {
           var o = el('option', null, String(opt));
           o.value = String(opt);
           select.appendChild(o);
         });
-        var current = state.filters[f.id];
-        if (f.type === 'multiselect' && Array.isArray(current)) {
-          Array.prototype.forEach.call(select.options, function (o) { o.selected = current.indexOf(o.value) !== -1; });
-        } else if (current !== undefined && current !== null) {
-          select.value = String(current);
-        } else {
-          select.value = '__all__';
-        }
-        select.addEventListener('change', function () {
-          state.filters[f.id] = f.type === 'multiselect'
-            ? Array.prototype.filter.call(select.options, function (o) { return o.selected; }).map(function (o) { return o.value; })
-            : select.value;
-          onFilterChange();
-        });
+        var current = state.pending[f.id];
+        select.value = current !== undefined && current !== null ? String(current) : '__all__';
+        select.addEventListener('change', function () { setPending(f.id, select.value); });
         wrap.appendChild(select);
       }
       bar.appendChild(wrap);
     });
+
+    var apply = el('button', 'yd-apply', 'Apply');
+    apply.type = 'button';
+    apply.disabled = true;
+    apply.addEventListener('click', applyFilters);
+    bar.appendChild(apply);
 
     var reset = el('button', 'yd-reset', 'Reset');
     reset.type = 'button';
@@ -709,6 +773,7 @@
       : w.type === 'hbar' ? barOption(w, rows, true)
       : w.type === 'bar' || w.type === 'stacked_bar' ? barOption(w, rows, false)
       : lineOption(w, rows);
+    placeAxisNames(option);
     chart.setOption(option);
     state.charts.push({ widget: w, instance: chart, el: host });
   }
@@ -720,7 +785,7 @@
       color: palette(),
       animationDuration: 260,
       textStyle: { fontFamily: 'system-ui, -apple-system, "Segoe UI", sans-serif', color: ink },
-      grid: { left: 8, right: 14, top: 28, bottom: 6, containLabel: true },
+      grid: { left: 8, right: 18, top: 28, bottom: 6, containLabel: true },
       tooltip: {
         backgroundColor: css('--yd-surface'),
         borderColor: css('--yd-border'),
@@ -729,6 +794,29 @@
       },
       legend: { show: false, top: 0, left: 0, itemWidth: 10, itemHeight: 10, icon: 'roundRect', textStyle: { color: css('--yd-ink-2'), fontSize: 12 } },
     };
+  }
+
+  // Room above the plot: the legend sits on the first line; a y-axis name
+  // (drawn above the axis) needs its own line below it or the two overlap.
+  function plotTop(legendShown, yName) {
+    if (legendShown && yName) return 52;
+    if (legendShown || yName) return 30;
+    return 16;
+  }
+
+  // Axis names: ECharts draws them past the axis ends, where containLabel does
+  // not reserve room, so they get clipped at the edges. Put the x name centered
+  // under the labels (with room for it) and start the y name at the axis line.
+  function placeAxisNames(option) {
+    if (!option.grid) return;
+    if (option.xAxis && option.xAxis.name) {
+      option.xAxis.nameLocation = 'middle';
+      option.xAxis.nameGap = 26;
+      option.grid.bottom = 26;
+    }
+    if (option.yAxis && option.yAxis.name) {
+      option.yAxis.nameTextStyle = Object.assign({}, option.yAxis.nameTextStyle, { align: 'left' });
+    }
   }
 
   function axisCommon(label, formatFn) {
@@ -790,10 +878,13 @@
     var area = w.type === 'area';
     var base = chartBase(w);
     base.legend.show = built.series.length > 1 && w.show_legend !== false;
-    base.grid.top = base.legend.show ? 30 : 16;
+    base.grid.top = plotTop(base.legend.show, w.y && w.y.label);
     base.tooltip.trigger = 'axis';
     base.tooltip.valueFormatter = valueFormatter(primary, w.y && w.y.format);
     base.xAxis = Object.assign(axisCommon(w.x.label), { type: 'category', data: built.keys, boundaryGap: false, splitLine: { show: false } });
+    // Line ends sit on the plot edges; keep the first and last labels inside.
+    base.xAxis.axisLabel.alignMinLabel = 'left';
+    base.xAxis.axisLabel.alignMaxLabel = 'right';
     base.yAxis = Object.assign(axisCommon(w.y && w.y.label, function (v) { return formatMetric(v, primary, (w.y && w.y.format) || 'compact'); }), {
       type: 'value',
       min: w.y && w.y.min,
@@ -825,7 +916,7 @@
     var stacked = w.type === 'stacked_bar';
     var base = chartBase(w);
     base.legend.show = built.series.length > 1 && w.show_legend !== false;
-    base.grid.top = base.legend.show ? 30 : 16;
+    base.grid.top = plotTop(base.legend.show, horizontal ? null : (w.y && w.y.label));
     base.tooltip.trigger = 'axis';
     base.tooltip.axisPointer = { type: 'shadow' };
     base.tooltip.valueFormatter = valueFormatter(primary, w.format);
