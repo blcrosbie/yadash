@@ -279,7 +279,13 @@
 
   function orderedKeys(map, dim, rankMetric) {
     var keys = Array.from(map.keys());
-    if (dim.bucket) {
+    if (dim.sort === 'asc' || dim.sort === 'desc') {
+      // An explicit x.sort orders by the labels themselves (FY2027, FY2028...).
+      keys.sort(function (a, b) { return String(a).localeCompare(String(b), undefined, { numeric: true }); });
+      if (dim.sort === 'desc') keys.reverse();
+    } else if (dim.sort === 'none') {
+      // first-seen order, as the rows arrive
+    } else if (dim.bucket) {
       keys.sort();
     } else if (rankMetric) {
       keys.sort(function (a, b) { return (aggregate(map.get(b), rankMetric) || 0) - (aggregate(map.get(a), rankMetric) || 0); });
@@ -872,7 +878,7 @@
   }
 
   function lineOption(w, rows) {
-    var dim = { field: w.x.field, bucket: w.x.bucket, limit: w.x.limit };
+    var dim = { field: w.x.field, bucket: w.x.bucket, limit: w.x.limit, sort: w.x.sort };
     var built = buildSeries(w, rows, dim);
     var primary = built.series[0] ? built.series[0].metric : null;
     var area = w.type === 'area';
@@ -910,7 +916,7 @@
   }
 
   function barOption(w, rows, horizontal) {
-    var dimSpec = horizontal ? (w.dimension || { field: w.y && w.y.field }) : { field: w.x.field, bucket: w.x.bucket, limit: w.x.limit };
+    var dimSpec = horizontal ? (w.dimension || { field: w.y && w.y.field }) : { field: w.x.field, bucket: w.x.bucket, limit: w.x.limit, sort: w.x.sort };
     var built = buildSeries(w, rows, dimSpec);
     var primary = built.series[0] ? built.series[0].metric : null;
     var stacked = w.type === 'stacked_bar';
@@ -931,8 +937,16 @@
     if (horizontal) { base.yAxis = catAxis; base.xAxis = valAxis; }
     else { base.xAxis = catAxis; base.yAxis = valAxis; }
 
+    // Thresholds colour each bar by its own value ({ below: 0, state: bad }
+    // turns every bar under zero red), the same states a KPI uses.
+    function point(v) {
+      var hit = stateFor(v, w.thresholds);
+      if (!hit) return v;
+      return { value: v, itemStyle: { color: css(hit.state === 'neutral' ? '--yd-ink-2' : '--yd-' + hit.state) } };
+    }
+
     base.series = built.series.map(function (s) {
-      var data = horizontal ? s.data.slice().reverse() : s.data;
+      var data = (horizontal ? s.data.slice().reverse() : s.data).map(point);
       return {
         name: s.name,
         type: 'bar',

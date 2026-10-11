@@ -85,6 +85,21 @@ are hard to read — prefer `stacked_bar`.
 `dimension` + `metric` and is the right call whenever category names are long —
 rotated x-axis labels are a readability tax nobody agreed to pay.
 
+`thresholds` work on `bar`, `stacked_bar` and `hbar` the way they do on a KPI,
+except each bar is coloured by its own value. A yearly deficit stored as a
+negative number:
+
+```yaml
+- id: deficit_by_year
+  type: bar
+  title: Deficit, by year
+  x: { field: fiscal_year, sort: asc }   # by label: bars otherwise rank by value
+  y: { metric: balance }
+  thresholds:
+    - below: 0
+      state: bad                # every bar under zero turns red
+```
+
 ## pie, donut
 
 ```yaml
